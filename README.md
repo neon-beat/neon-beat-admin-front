@@ -38,7 +38,6 @@ neon-beat-admin-front/
 │   │   └── MessageContext.tsx      # Message/notification context
 │   ├── Hooks/                       # Custom React hooks
 │   │   ├── useApiContext.tsx       # API context consumer hook
-│   │   ├── useNeonBeatApi.tsx      # Legacy API hook (backward compatibility)
 │   │   └── useNeonBeatGames.tsx    # Games and playlists management
 │   ├── assets/                      # Source assets
 │   │   ├── background.png

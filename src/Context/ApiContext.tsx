@@ -88,6 +88,8 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     if (!response.ok) {
       throw new Error('Failed to create game');
     }
+    const data = await response.json();
+    return data;
   }, [apiBaseUrl]);
 
   const getPlaylists = useCallback(async (): Promise<Playlist[]> => {
