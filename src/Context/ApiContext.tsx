@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useCallback, useRef } from "react";
 import type { ReactNode } from "react";
 import MessageContext from "./MessageContext";
-import type { Game, Playlist } from "../Hooks/useNeonBeatGames";
+import type { Game, Player, Playlist } from "../Hooks/useNeonBeatGames";
 
 interface ApiContextType {
   getGames: () => Promise<Game[]>;
@@ -13,14 +13,9 @@ interface ApiContextType {
 }
 
 interface GamePayload {
-  name: "string",
-  players: [
-    {
-      "buzzer_id": "string",
-      "name": "string"
-    }
-  ],
-  playlist_id: "string"
+  name: string,
+  players: Player[],
+  playlist_id: string;
 }
 
 const ApiContext = createContext<ApiContextType | null>(null);

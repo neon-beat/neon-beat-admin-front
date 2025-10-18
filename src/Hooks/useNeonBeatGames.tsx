@@ -30,10 +30,15 @@ export interface Game {
 }
 
 export interface Playlist {
-  id?: string;
+  id: string;
   name: string;
   songs: Song[];
   // Add other playlist properties as needed
+}
+
+export interface Player {
+  buzzer_id: string;
+  name: string;
 }
 
 const useNeonBeatGames = () => {
@@ -43,10 +48,13 @@ const useNeonBeatGames = () => {
   }
   const { messageApi } = messageContext;
 
-  const { getGames, getPlaylists, postPlaylist, isServerReady } = useApiContext();
+  const { getGames, postGame, getPlaylists, postPlaylist, isServerReady } = useApiContext();
 
   const [games, setGames] = useState<Game[]>([]);
-  const [playlists, setPlaylists] = useState<Playlist[]>([]); // Define a Playlist interface as needed
+  const [playlists, setPlaylists] = useState<Playlist[]>([]);
+  const [players] = useState<Player[]>([]);
+
+  const [game, /*setGame*/] = useState<Game>({ id: '', name: '', status: 'paused' });
 
   const loadGames = async () => {
     getGames()
@@ -56,10 +64,6 @@ const useNeonBeatGames = () => {
       .catch((error) => {
         messageApi.error(`Error fetching games: ${error.message}`);
       });
-  };
-
-  const newGame = () => {
-
   };
 
   const loadPlaylists = async () => {
@@ -78,6 +82,18 @@ const useNeonBeatGames = () => {
     loadPlaylists();
   };
 
+  const createGameWithPlaylist = async (name: string, playlistId: string) => {
+    const payload = {
+      name,
+      players,
+      playlist_id: playlistId
+    };
+
+    await postGame(payload);
+    messageApi.success('Game created successfully');
+    loadGames();
+  };
+
   useEffect(() => {
     if (isServerReady) {
       loadGames();
@@ -88,8 +104,9 @@ const useNeonBeatGames = () => {
   return {
     games,
     playlists,
-    newGame,
+    createGameWithPlaylist,
     importPlaylist,
+    game,
   };
 };
 

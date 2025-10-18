@@ -8,5 +8,7 @@ export default defineConfig({
   base: '/admin',
   build: {
     sourcemap: true,
+    // buildDir output configuration
+    outDir: 'dist/admin',
   },
 })

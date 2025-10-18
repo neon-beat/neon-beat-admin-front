@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-main-purple: #9E339F;
+}
+
 body {
   background-image: url('./assets/background.png');
   background-size: cover;
