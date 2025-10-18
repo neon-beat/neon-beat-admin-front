@@ -1,39 +1,32 @@
-import { Button, Card, Flex, List } from "antd";
+import { Button, Card, Flex, Typography } from "antd";
 import ImportPlaylist from "./ImportPlaylist";
-import useNeonBeatGames, { type Game } from "../Hooks/useNeonBeatGames";
+import useNeonBeatGames from "../Hooks/useNeonBeatGames";
 import '../css/admin-home.css';
 import GameController from "./GameController";
 import SongAnswer from "./SongAnswer";
 import GameCreator from "./GameCreator";
 import { useState } from "react";
+import GameItem from "./GameItem";
 
 function AdminHome() {
-  const { game, games, playlists,
-    importPlaylist, createGameWithPlaylist,
+  const { game, song, games, teams, playlists, buzzerList,
+    importPlaylist, createGameWithPlaylist, currentTeamPairing,
   } = useNeonBeatGames();
 
   const [isCreatingGame, setIsCreatingGame] = useState<boolean>(false);
 
   return (
     <Card
-      title="Welcome to the Admin Panel"
+      title="Neon Beat Admin Panel"
       className="nba-admin-home"
-      classNames={{ body: 'h-' }}
+      classNames={{ header: 'text-center' }}
     >
+      <Typography.Title level={5}>Current Games</Typography.Title>
       <Flex vertical gap="small">
         {isCreatingGame === false ? <>
           {games && games.length > 0
             ? (
-              <List>
-                {games.map((game: Game) => (
-                  <List.Item key={game.id}>
-                    <List.Item.Meta
-                      title={game.name}
-                      description={`ID: ${game.id} | Status: ${game.status}`}
-                    />
-                  </List.Item>
-                ))}
-              </List>
+              games.map((g) => <GameItem key={g.id} game={g} teamList={teams} buzzerList={buzzerList} currentTeamPairing={currentTeamPairing} />)
             )
             : <p>No games available. Please add some games to get started.</p>
           }
@@ -42,10 +35,15 @@ function AdminHome() {
             <ImportPlaylist onImport={importPlaylist} />
           </Flex>
         </> :
-          <GameCreator playlists={playlists} onPlaylistSelected={createGameWithPlaylist} />
+          <GameCreator
+            playlists={playlists}
+            onCreateGame={createGameWithPlaylist}
+            buzzerList={buzzerList}
+            onCancel={() => setIsCreatingGame(false)}
+          />
         }
-        <SongAnswer field="Sample Field" value="Sample Value" />
-        <GameController game={game} />
+        {song?.point_fields?.length && song?.point_fields?.length > 0 && <SongAnswer field="Sample Field" value="Sample Value" />}
+        {game?.id && <GameController game={game} />}
       </Flex>
     </Card>
   );

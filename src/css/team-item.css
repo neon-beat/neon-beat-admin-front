@@ -1,0 +1,11 @@
+.team-item {
+  height: 32px;
+  background-color: #141414;
+  border: 1px solid #424242;
+  border-radius: 20px;
+  padding: 0 1em;
+}
+
+.team-item.selected {
+  border-color: #892e8a;
+}

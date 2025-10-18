@@ -1,23 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 import MessageContext from "../Context/MessageContext";
 import { useApiContext } from "./useApiContext";
+import type { GamePayload } from "../Context/ApiContext";
 
-export interface BonusField {
+export interface Field {
   key: string;
   points: number;
   value: string;
 }
-
-export interface PointField {
-  key: string;
-  points: number;
-  value: string;
-}
-
 export interface Song {
-  bonus_fields: BonusField[];
+  id: string;
+  bonus_fields: Field[];
   guess_duration_ms: number;
-  point_fields: PointField[];
+  point_fields: Field[];
   starts_at_ms: number;
   url: string;
 }
@@ -25,7 +20,11 @@ export interface Song {
 export interface Game {
   id: string;
   name: string;
+  playlist: Playlist;
+  players?: Team[];
   status?: string;
+  created_at?: string;
+  updated_at?: string;
   // Add other game properties as needed
 }
 
@@ -36,9 +35,15 @@ export interface Playlist {
   // Add other playlist properties as needed
 }
 
-export interface Player {
-  buzzer_id: string;
+export interface Team {
+  id?: string;
+  buzzer_id?: string;
   name: string;
+  score?: number;
+}
+
+export interface Buzzer {
+  id: string;
 }
 
 const useNeonBeatGames = () => {
@@ -48,13 +53,27 @@ const useNeonBeatGames = () => {
   }
   const { messageApi } = messageContext;
 
-  const { getGames, postGame, getPlaylists, postPlaylist, isServerReady } = useApiContext();
+  const { sse, getGames, postGame, getPlaylists, postPlaylist, getTeams, postTeam, isServerReady } = useApiContext();
 
   const [games, setGames] = useState<Game[]>([]);
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
-  const [players] = useState<Player[]>([]);
+  const [teams, setTeams] = useState<Team[]>([]);
+  const [currentTeamPairing, setCurrentTeamPairing] = useState<Team | undefined>();
 
-  const [game, /*setGame*/] = useState<Game>({ id: '', name: '', status: 'paused' });
+  const [game, setGame] = useState<Game | undefined>();
+  const [song, /*setSong*/] = useState<Song | undefined>();
+
+  const [buzzerList] = useState<Buzzer[]>([]);
+
+  const loadTeams = async () => {
+    getTeams()
+      .then((data) => {
+        setTeams(data);
+      })
+      .catch((error) => {
+        messageApi.error(`Error fetching teams: ${error.message}`);
+      });
+  };
 
   const loadGames = async () => {
     getGames()
@@ -82,16 +101,30 @@ const useNeonBeatGames = () => {
     loadPlaylists();
   };
 
-  const createGameWithPlaylist = async (name: string, playlistId: string) => {
-    const payload = {
-      name,
-      players,
-      playlist_id: playlistId
-    };
-
-    await postGame(payload);
+  const createGameWithPlaylist = async (payload: GamePayload) => {
+    const newGame = await postGame(payload);
+    setGame(newGame);
     messageApi.success('Game created successfully');
     loadGames();
+  };
+
+  const createTeamWithoutBuzzer = async (name: string) => {
+    const payload = {
+      name,
+      score: 0,
+    };
+
+    await postTeam(payload);
+    await loadTeams();
+    messageApi.success('Team created successfully');
+  };
+
+  const onPairingAssigned = (event: MessageEvent) => {
+    const data = JSON.parse(event.data);
+    const { team_id, buzzer_id } = data;
+    messageApi.success(`Team ${teams.find((t) => t.id === team_id)?.id} paired with Buzzer ${buzzer_id}`);
+    loadTeams();
+    setCurrentTeamPairing(undefined);
   };
 
   useEffect(() => {
@@ -101,12 +134,31 @@ const useNeonBeatGames = () => {
     }
   }, [isServerReady]);
 
+  useEffect(() => {
+    loadTeams();
+  }, [game]);
+
+  useEffect(() => {
+    if (!sse) return;
+
+    sse.addEventListener('pairing.assigned', onPairingAssigned);
+
+    return () => {
+      sse.removeEventListener('pairing.assigned', onPairingAssigned);
+    };
+  }, [sse]);
+
   return {
     games,
     playlists,
     createGameWithPlaylist,
     importPlaylist,
+    createTeamWithoutBuzzer,
+    currentTeamPairing,
     game,
+    teams,
+    song,
+    buzzerList,
   };
 };
 

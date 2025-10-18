@@ -1,20 +1,25 @@
-import React, { createContext, useContext, useEffect, useState, useCallback, useRef } from "react";
+import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
 import type { ReactNode } from "react";
 import MessageContext from "./MessageContext";
-import type { Game, Player, Playlist } from "../Hooks/useNeonBeatGames";
+import type { Game, Team, Playlist } from "../Hooks/useNeonBeatGames";
 
 interface ApiContextType {
+  sse: EventSource | undefined;
   getGames: () => Promise<Game[]>;
-  postGame: (payload: GamePayload) => Promise<void>;
+  postGame: (payload: GamePayload) => Promise<Game>;
+  startGame: () => Promise<void>;
   getPlaylists: () => Promise<Playlist[]>;
   postPlaylist: (payload: Playlist) => Promise<void>;
+  getTeams: () => Promise<Team[]>;
+  postTeam: (payload: { name: string; buzzer_id?: string; score: number }) => Promise<void>;
+  startAutoPairingTeam: (teamId: string) => Promise<void>;
   isServerReady: boolean | null;
   apiBaseUrl: string;
 }
 
-interface GamePayload {
+export interface GamePayload {
   name: string,
-  players: Player[],
+  players: Team[],
   playlist_id: string;
 }
 
@@ -33,7 +38,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
 
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
   const [isServerReady, setIsServerReady] = useState<boolean | null>(null);
-  const sseRef = useRef<EventSource | null>(null);
+  const [sse, setSse] = useState<EventSource>();
 
   const searchForBackend = useCallback(async () => {
     const response = await fetch(`${apiBaseUrl}/healthcheck`);
@@ -54,14 +59,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       messageApi.error('SSE connection error');
       console.error('SSE error:', error);
       eventSource.close();
-    }
-
-    eventSource.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      console.log('SSE message received:', data);
     };
 
-    sseRef.current = eventSource;
+    setSse(eventSource);
   }, [apiBaseUrl, messageApi]);
 
   const getGames = useCallback(async (): Promise<Game[]> => {
@@ -72,7 +72,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     return response.json();
   }, [apiBaseUrl]);
 
-  const postGame = useCallback(async (payload: GamePayload): Promise<void> => {
+  const postGame = useCallback(async (payload: GamePayload): Promise<Game> => {
     const response = await fetch(`${apiBaseUrl}/admin/games`, {
       method: 'POST',
       headers: {
@@ -108,6 +108,51 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [apiBaseUrl]);
 
+  const postTeam = useCallback(async (payload: { name: string; buzzer_id?: string; score: number }): Promise<void> => {
+    const response = await fetch(`${apiBaseUrl}/admin/teams`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to create team');
+    }
+  }, [apiBaseUrl]);
+
+  const getTeams = useCallback(async (): Promise<Team[]> => {
+    const response = await fetch(`${apiBaseUrl}/public/teams`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch teams');
+    }
+    const data = await response.json();
+    return data.teams;
+  }, [apiBaseUrl]);
+
+  const startGame = useCallback(async (/* gameId: string */): Promise<void> => {
+    // const response = await fetch(`${apiBaseUrl}/admin/games/${gameId}/start`, {
+    const response = await fetch(`${apiBaseUrl}/admin/game/start`, {
+      method: 'POST',
+    });
+    if (!response.ok) {
+      throw new Error('Failed to start game');
+    }
+  }, [apiBaseUrl]);
+
+  const startAutoPairingTeam = useCallback(async (teamId: string): Promise<void> => {
+    const response = await fetch(`${apiBaseUrl}/admin/teams/pairing`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ first_team_id: teamId }),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to start auto pairing');
+    }
+  }, [apiBaseUrl]);
+
   useEffect(() => {
     searchForBackend()
       .then(() => {
@@ -120,17 +165,22 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
         messageApi.error(`Error connecting to backend: ${error.message}`);
       });
     return () => {
-      if (sseRef.current) {
-        sseRef.current.close();
+      if (sse) {
+        sse.close();
       }
     };
   }, [messageApi, apiBaseUrl, initSse, searchForBackend]);
 
   const value: ApiContextType = {
+    sse,
     getGames,
     postGame,
+    startGame,
     getPlaylists,
     postPlaylist,
+    getTeams,
+    postTeam,
+    startAutoPairingTeam,
     isServerReady,
     apiBaseUrl,
   };
