@@ -1,0 +1,89 @@
+{
+  "name": "Neon Beat Admin",
+  "short_name": "NBA Admin",
+  "description": "Admin dashboard for managing Neon Beat game sessions, playlists, teams, and configurations",
+  "version": "1.0.0",
+  "start_url": "/admin/",
+  "scope": "/admin/",
+  "display": "standalone",
+  "orientation": "landscape-primary",
+  "theme_color": "#9E339F",
+  "background_color": "#141414",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "games",
+    "entertainment",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/admin/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/admin/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/admin/images/background.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "Games Dashboard",
+      "short_name": "Games",
+      "description": "View and manage active games",
+      "url": "/admin/?view=games",
+      "icons": [
+        {
+          "src": "/admin/images/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Playlist Manager",
+      "short_name": "Playlists",
+      "description": "Import and manage playlists",
+      "url": "/admin/?view=playlists",
+      "icons": [
+        {
+          "src": "/admin/images/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Team Management",
+      "short_name": "Teams",
+      "description": "Create and manage teams",
+      "url": "/admin/?view=teams",
+      "icons": [
+        {
+          "src": "/admin/images/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 480
+  }
+}

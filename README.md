@@ -38,7 +38,7 @@ neon-beat-admin-front/
 │   │   └── MessageContext.tsx      # Message/notification context
 │   ├── Hooks/                       # Custom React hooks
 │   │   ├── useApiContext.tsx       # API context consumer hook
-│   │   └── useNeonBeatGames.tsx    # Games and playlists management
+│   │   └── useNeonBeatGame.tsx    # Games and playlists management
 │   ├── assets/                      # Source assets
 │   │   ├── background.png
 │   │   └── logo.png
@@ -157,6 +157,35 @@ npx prettier --write .
 - **Ant Design**: Dark theme with custom primary color (`#9E339F`)
 - **Tailwind CSS**: Utility-first approach with Prettier plugin
 - **Custom Components**: CSS modules for component-specific styles
+
+## 📱 Progressive Web App (PWA)
+
+The Neon Beat Admin Frontend is built as a Progressive Web App with the following features:
+
+### PWA Features
+- **App Manifest** (`public/manifest.json`) - Installable web app with proper metadata
+- **Service Worker** (`public/sw.js`) - Offline functionality and caching
+- **App Shortcuts** - Quick access to Games, Playlists, and Teams sections
+- **Responsive Design** - Optimized for desktop and tablet use
+- **Offline Support** - Basic offline functionality with cached assets
+
+### Installation
+Users can install the admin dashboard as a standalone app:
+1. **Desktop**: Click the install button in the address bar (Chrome/Edge)
+2. **Mobile**: Add to home screen from browser menu
+3. **PWA Store**: Available through PWA directories
+
+### Service Worker Capabilities
+- **Static Asset Caching** - Images, CSS, and JS files cached for offline use
+- **Runtime Caching** - Dynamic content cached during use
+- **Background Sync** - Queued actions when connectivity is restored
+- **Push Notifications** - Ready for future notification features
+
+### PWA Configuration
+- **Theme Color**: `#9E339F` (Neon Beat purple)
+- **Background Color**: `#141414` (Dark theme)
+- **Display Mode**: Standalone (full-screen app experience)
+- **Orientation**: Landscape-primary (optimized for admin tasks)
 
 ## 🌐 Environment Variables
 

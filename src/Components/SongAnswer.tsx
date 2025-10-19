@@ -1,14 +1,14 @@
 import { Button, Flex } from "antd";
-import { FaCheck, FaEye } from "react-icons/fa6";
+import { FaCheck } from "react-icons/fa6";
+import type { Field } from "../Context/GameManagementContext";
 
-function SongAnswer({ field, value }: { field: string; value: string }) {
+function SongAnswer({ field, isRevealed, onReveal }: { field: Field, onReveal?: (field: Field) => void, isRevealed?: boolean }) {
   return (
-    <Flex vertical gap="small" className="rounded-lg border-1 border-white bg-emerald-400 !p-1">
+    <Flex vertical gap="small" className={`rounded-full border-1 border-[#424242] !p-1 !pl-3 ${isRevealed ? 'bg-green-800' : ''}`}>
       <Flex justify="space-between" align="center">
-        <span>{field}: <b>{value}</b></span>
+        <span>{field.key}: <b>{field.value}</b></span>
         <Flex gap="small">
-          <Button size="small" icon={<FaEye />} />
-          <Button size="small" icon={<FaCheck />} />
+          <Button size="small" icon={<FaCheck />} shape="circle" onClick={() => onReveal?.(field)} />
         </Flex>
       </Flex>
     </Flex>

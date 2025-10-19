@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Button, Flex, Modal, Upload } from "antd";
 import { FaUpload } from "react-icons/fa6";
 import MessageContext from "../Context/MessageContext";
-import type { Playlist } from "../Hooks/useNeonBeatGames";
+import type { Playlist } from "../Hooks/useNeonBeatGame";
 
 const { Dragger } = Upload;
 

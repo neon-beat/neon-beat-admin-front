@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import { Button, Divider, Modal } from "antd";
-import type { Team } from "../Hooks/useNeonBeatGames";
+import type { Team } from "../Hooks/useNeonBeatGame";
 import TeamItem from "./TeamItem";
+import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 
 function TeamPairingModal(
-  { open, onClose, teamList, selectedTeam, buzzerList, onManualPairing, onAutoPairingClick }
+  { open, onClose, teamList, selectedTeam, onManualPairing, onAutoPairingClick }
     : {
       open: boolean,
       onClose: () => void,
       teamList?: Team[],
       selectedTeam?: Team,
-      buzzerList: { id: string }[],
       onManualPairing?: (team: Team, buzzerId: string) => void,
       onAutoPairingClick?: (team: Team) => void,
     }) {
   const [currentPairingTeam, setCurrentPairingTeam] = useState<Team | undefined>();
+
+  const { buzzers } = useNeonBeatGame();
 
   const handleBuzzerClick = (buzzerId: string) => {
     if (currentPairingTeam && onManualPairing) {
@@ -25,8 +27,8 @@ function TeamPairingModal(
 
   const checkManualPairingEnabled = () => {
     if (!(typeof onManualPairing === 'function')) return false
-    if (!buzzerList) return false;
-    if (buzzerList.length === 0) return false;
+    if (!buzzers) return false;
+    if (buzzers.length === 0) return false;
     return true;
   }
 
@@ -52,7 +54,7 @@ function TeamPairingModal(
       : <p>No teams available for pairing.</p>
     }
     <Divider />
-    {(buzzerList && buzzerList.length && buzzerList.length > 0) ? buzzerList.map(buzzer => (
+    {(buzzers && buzzers.length && buzzers.length > 0) ? buzzers.map(buzzer => (
       <Button key={buzzer.id} type="default" onClick={() => handleBuzzerClick(buzzer.id)}>Buzzer {buzzer.id}</Button>
     ))
       : <p>No buzzers available.</p>

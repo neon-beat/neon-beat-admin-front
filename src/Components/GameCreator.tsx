@@ -1,19 +1,18 @@
 import { useContext, useState } from "react";
 import { Button, Flex, Input, Typography } from "antd";
 import { FaLink, FaPlus } from "react-icons/fa6";
-import type { Buzzer, Team, Playlist } from "../Hooks/useNeonBeatGames";
+import type { Team } from "../Hooks/useNeonBeatGame";
 import type { GamePayload } from "../Context/ApiContext";
 import '../css/game-creator.css';
 import MessageContext from "../Context/MessageContext";
 import TeamItem from "./TeamItem";
 import TeamPairingModal from "./TeamPairingModal";
+import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 
 function GameCreator(
-  { playlists, onCreateGame, buzzerList, onCancel }
+  { onCreateGame, onCancel }
     : {
-      playlists?: Playlist[],
       onCreateGame?: (payload: GamePayload) => void,
-      buzzerList: Buzzer[],
       onCancel: () => void,
     }) {
   const [gameName, setGameName] = useState<string>('');
@@ -25,6 +24,8 @@ function GameCreator(
 
   const { messageApi } = useContext(MessageContext)!;
 
+  const { playlists } = useNeonBeatGame();
+
   const addTeam = async (name: string) => {
     if (name.trim() === '') return;
     const newTeam: Team = {
@@ -35,7 +36,7 @@ function GameCreator(
     setTeamName('');
   };
 
-  const handleClickCreateGame = () => {
+  const handleClickCreateGame = async () => {
     if (!gameName) {
       messageApi.error('Please enter a game name.');
       return;
@@ -48,11 +49,13 @@ function GameCreator(
       messageApi.error('Please add at least one team.');
       return;
     }
-    if (onCreateGame) onCreateGame({
-      name: gameName,
-      playlist_id: selectedPlaylistId,
-      players: teamList,
-    });
+    if (onCreateGame) {
+      await onCreateGame({
+        name: gameName,
+        playlist_id: selectedPlaylistId,
+        teams: teamList,
+      });
+    }
   };
 
   const handleClickDeleteTeam = (teamToDelete: Team) => {
@@ -105,7 +108,6 @@ function GameCreator(
       open={buzzerPairingModalOpen}
       onClose={() => setBuzzerPairingModalOpen(false)}
       teamList={teamList}
-      buzzerList={buzzerList}
     />
   </Flex>;
 }
