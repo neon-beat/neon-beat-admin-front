@@ -8,14 +8,17 @@ import { useState } from "react";
 import GameItem from "./GameItem";
 import SongController from "./SongController";
 import TeamsController from "./TeamsController";
+import BuzzController from "./BuzzController";
 
 function AdminHome() {
   const { song, game, games, gameState, teams,
     importPlaylist, createGameWithPlaylist,
-    showGameList,
+    showGameList, teamIdBuzzing,
   } = useNeonBeatGame();
 
   const [isCreatingGame, setIsCreatingGame] = useState<boolean>(false);
+
+  const currentTeamBuzzing = teams?.find((team) => team.id === teamIdBuzzing);
 
   return (
     <Card
@@ -56,7 +59,7 @@ function AdminHome() {
             </>
           )}
           {song?.id && <SongController />}
-
+          {currentTeamBuzzing && <BuzzController team={currentTeamBuzzing} />}
           {teams && teams.length > 0 && <TeamsController />}
           {game?.id && <GameController />}
         </Flex>

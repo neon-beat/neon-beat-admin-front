@@ -11,7 +11,7 @@ import TeamPairingModal from "./TeamPairingModal";
 import type { TeamPayload } from "../Context/ApiContext";
 
 function GameController() {
-  const { game, setGame, setTeams, canPairTeams, canStartGame, canResumeGame, canPauseGame, canRevealSong, canGoNextSong, canStopGame, canEndGame, isGameRunning } = useNeonBeatGame();
+  const { game, resetFoundFields, resetWholeGame, canPairTeams, canStartGame, canResumeGame, canPauseGame, canRevealSong, canGoNextSong, canStopGame, canEndGame, isGameRunning } = useNeonBeatGame();
   const { startAutoPairingTeam, startGame, resumeGame, pauseGame, revealSong, nextSong, stopGame, endGame, putTeam } = useApiContext();
 
   const [isTeamPairingModalOpen, setIsTeamPairingModalOpen] = useState<boolean>(false);
@@ -65,6 +65,7 @@ function GameController() {
   const handleNextSong = async () => {
     try {
       await nextSong();
+      resetFoundFields();
       messageApi.success('Moved to next song');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to move to next song';
@@ -85,8 +86,7 @@ function GameController() {
   const handleEndGame = async () => {
     try {
       await endGame();
-      setGame(undefined);
-      setTeams(undefined);
+      resetWholeGame();
       messageApi.success('Game ended successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to end game';

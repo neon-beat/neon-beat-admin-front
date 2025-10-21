@@ -24,7 +24,7 @@ function SongController() {
       key={field.key}
       field={field}
       isRevealed={bonusFieldsFound.includes(field.key)}
-      onReveal={(field) => handleOnReveal(field, 'ponus')}
+      onReveal={(field) => handleOnReveal(field, 'bonus')}
     />)}
   </Flex>;
 }

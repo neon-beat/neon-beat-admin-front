@@ -20,6 +20,7 @@ interface ApiContextType {
   nextSong: () => Promise<void>;
   putTeam: (payload: TeamPayload) => Promise<void>;
   deleteGame: (gameId: string) => Promise<void>;
+  validateAnswer: (payload: { valid: string; }) => Promise<void>;
   getCurrentPhase: () => Promise<PhasePayload>;
   getPlaylists: () => Promise<Playlist[]>;
   postPlaylist: (payload: Playlist) => Promise<void>;
@@ -404,6 +405,20 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [apiBaseUrl, getAdminHeaders]);
 
+  const validateAnswer = useCallback(async (payload: { valid: string; }) => {
+    const response = await fetch(`${apiBaseUrl}/admin/game/answer`, {
+      method: 'POST',
+      headers: getAdminHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      const errorMessage = await getErrorMessage(response, 'Failed to validate answer');
+      throw new Error(errorMessage);
+    }
+  }, [apiBaseUrl, getAdminHeaders]);
+
   useEffect(() => {
     searchForBackend()
       .then(() => {
@@ -462,6 +477,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     startAutoPairingTeam,
     putTeam,
     deleteGame,
+    validateAnswer,
   };
 
   return (

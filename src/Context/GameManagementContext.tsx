@@ -73,6 +73,7 @@ interface GameManagementContextType {
   setTeams: React.Dispatch<React.SetStateAction<Team[] | undefined>>;
   pointFieldsFound: string[];
   bonusFieldsFound: string[];
+  teamIdBuzzing: string | undefined;
 
   // Actions
   loadSelectedGame: (gameId: string) => Promise<void>;
@@ -84,6 +85,9 @@ interface GameManagementContextType {
   createTeamWithoutBuzzer: (name: string) => Promise<void>;
   revealField: (field: Field, kind: string) => Promise<void>;
   grantTeamPoints: (team: Team, points: number) => Promise<void>;
+  resetFoundFields: () => void;
+  resetWholeGame: () => void;
+  setTeamIdBuzzing: React.Dispatch<React.SetStateAction<string | undefined>>;
 
   // Tests
   canPairTeams: () => boolean;
@@ -128,6 +132,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
   const [gameState, setGameState] = useState<GameState | undefined>();
   const [pointFieldsFound, setPointFieldsFound] = useState<string[]>([]);
   const [bonusFieldsFound, setBonusFieldsFound] = useState<string[]>([]);
+  const [teamIdBuzzing, setTeamIdBuzzing] = useState<string | undefined>();
 
   // Actions
   const loadTeams = useCallback(async () => {
@@ -236,6 +241,20 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     }
   }, [postTeam, messageApi, loadTeams]);
 
+  const resetFoundFields = useCallback(() => {
+    setPointFieldsFound([]);
+    setBonusFieldsFound([]);
+  }, []);
+
+  const resetWholeGame = useCallback(() => {
+    setGame(undefined);
+    setTeams(undefined);
+    setSong(undefined);
+    setPointFieldsFound([]);
+    setBonusFieldsFound([]);
+    setGameState(GameState.IDLE);
+  }, []);
+
   // SSE Event Handlers
   const onPairingAssigned = useCallback((event: MessageEvent) => {
     if (!teams) return;
@@ -269,7 +288,13 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       if (data.found_point_fields) setPointFieldsFound(data.found_point_fields);
       if (data.found_bonus_fields) setBonusFieldsFound(data.found_bonus_fields);
     }
-  }, [messageApi]);
+    if (data.phase === GameState.PAUSED && data.paused_buzzer) {
+      const team = teams?.find(t => t.buzzer_id === data.paused_buzzer);
+      if (team) {
+        setTeamIdBuzzing(team.id);
+      }
+    }
+  }, [messageApi, teams]);
 
   const onTeamCreated = useCallback((event: MessageEvent) => {
     const data = JSON.parse(event.data);
@@ -418,6 +443,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     setTeams,
     pointFieldsFound,
     bonusFieldsFound,
+    teamIdBuzzing,
 
     // Actions
     loadSelectedGame,
@@ -429,6 +455,9 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     createTeamWithoutBuzzer,
     revealField,
     grantTeamPoints,
+    resetFoundFields,
+    resetWholeGame,
+    setTeamIdBuzzing,
 
     // Tests
     canPairTeams,
