@@ -8,7 +8,7 @@ interface ApiContextType {
   getSong: () => Promise<{ song: Song, found_point_fields: string[], found_bonus_fields: string[] }>;
   getGames: () => Promise<Game[]>;
   getGame: (gameId: string) => Promise<Game>;
-  postGame: (payload: GamePayload) => Promise<Game>;
+  postGame: (payload: GamePayload, shuffle: boolean) => Promise<Game>;
   loadGame: (gameId: string) => Promise<Game>;
   startGame: () => Promise<void>;
   stopGame: () => Promise<void>;
@@ -172,8 +172,8 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     return response.json();
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const postGame = useCallback(async (payload: GamePayload): Promise<Game> => {
-    const response = await fetch(`${apiBaseUrl}/admin/games`, {
+  const postGame = useCallback(async (payload: GamePayload, shuffle: boolean): Promise<Game> => {
+    const response = await fetch(`${apiBaseUrl}/admin/games${shuffle ? '?shuffle=true' : ''}`, {
       method: 'POST',
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
@@ -380,13 +380,13 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const postScore = useCallback(async (buzzer_id: string, delta: number): Promise<void> => {
-    const response = await fetch(`${apiBaseUrl}/admin/game/score`, {
+  const postScore = useCallback(async (team_id: string, delta: number): Promise<void> => {
+    const response = await fetch(`${apiBaseUrl}/teams/${team_id}/score`, {
       method: 'POST',
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
-      body: JSON.stringify({ buzzer_id, delta }),
+      body: JSON.stringify({ delta }),
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to post score');

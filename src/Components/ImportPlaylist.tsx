@@ -43,7 +43,7 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: Playlist) => Promis
 
   return (
     <>
-      <Button type="primary" icon={<FaUpload />} onClick={() => setModalOpen((prev) => !prev)} />
+      <Button type="primary" icon={<FaUpload />} onClick={() => setModalOpen((prev) => !prev)}>Import Playlist</Button>
       <Modal
         title="Import Playlist"
         open={modalOpen}

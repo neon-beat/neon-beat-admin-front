@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Button, Flex, Input, Typography } from "antd";
+import { Button, Checkbox, Flex, Input, Typography } from "antd";
 import { FaLink, FaPlus } from "react-icons/fa6";
 import type { Team } from "../Hooks/useNeonBeatGame";
 import type { GamePayload } from "../Context/ApiContext";
@@ -12,13 +12,14 @@ import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 function GameCreator(
   { onCreateGame, onCancel }
     : {
-      onCreateGame?: (payload: GamePayload) => void,
+      onCreateGame?: (payload: GamePayload, shuffle: boolean) => void,
       onCancel: () => void,
     }) {
   const [gameName, setGameName] = useState<string>('');
   const [teamName, setTeamName] = useState<string>('');
   const [selectedPlaylistId, setSelectedPlaylistId] = useState<string | undefined>();
   const [teamList, setTeamList] = useState<Team[]>([]);
+  const [shufflePlaylist, setShufflePlaylist] = useState<boolean>(false);
 
   const [buzzerPairingModalOpen, setBuzzerPairingModalOpen] = useState<boolean>(false);
 
@@ -54,7 +55,7 @@ function GameCreator(
         name: gameName,
         playlist_id: selectedPlaylistId,
         teams: teamList,
-      });
+      }, shufflePlaylist);
     }
   };
 
@@ -65,7 +66,17 @@ function GameCreator(
   return <Flex vertical gap="small" className="nba-game-creator">
     <Input placeholder="Game Name" type="text" value={gameName} onChange={(e) => setGameName(e.target.value)} />
     {!selectedPlaylistId && <Typography.Text>Select a Playlist:</Typography.Text>}
-    {selectedPlaylistId && <Typography.Text>Selected Playlist: {playlists?.find((p) => p.id === selectedPlaylistId)?.name}</Typography.Text>}
+    {selectedPlaylistId && (
+      <Flex justify="space-between">
+      <Typography.Text>Selected Playlist: {playlists?.find((p) => p.id === selectedPlaylistId)?.name}</Typography.Text>
+      <Checkbox 
+        checked={shufflePlaylist}
+        onChange={(e) => setShufflePlaylist(e.target.checked)}
+      >
+        Shuffle Playlist
+      </Checkbox>
+    </Flex>
+    )}
     <Flex vertical gap="small" className="grow-1">
       {playlists && playlists.length > 0 ? (
         playlists.map((playlist) => (

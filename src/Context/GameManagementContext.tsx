@@ -81,7 +81,7 @@ interface GameManagementContextType {
   loadPlaylists: () => Promise<void>;
   loadTeams: () => Promise<void>;
   importPlaylist: (payload: Playlist) => Promise<void>;
-  createGameWithPlaylist: (payload: GamePayload) => Promise<void>;
+  createGameWithPlaylist: (payload: GamePayload, shuffle: boolean) => Promise<void>;
   createTeamWithoutBuzzer: (name: string) => Promise<void>;
   revealField: (field: Field, kind: string) => Promise<void>;
   grantTeamPoints: (team: Team, points: number) => Promise<void>;
@@ -171,8 +171,8 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     loadPlaylists();
   }, [postPlaylist, messageApi, loadPlaylists]);
 
-  const createGameWithPlaylist = useCallback(async (payload: GamePayload) => {
-    const newGame = await postGame(payload);
+  const createGameWithPlaylist = useCallback(async (payload: GamePayload, shuffle: boolean) => {
+    const newGame = await postGame(payload, shuffle);
     setGame(newGame);
     messageApi.success('Game created successfully');
     loadGames();
