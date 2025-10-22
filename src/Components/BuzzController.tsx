@@ -1,13 +1,13 @@
 import type { Team } from "../Context/GameManagementContext";
 import { Button, Flex } from "antd";
 import '../css/buzzer-item.css';
-import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
+import { IoCheckmarkDoneSharp, IoCheckmarkSharp, IoCloseSharp, IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import { useApiContext } from "../Hooks/useApiContext";
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 import { useContext } from "react";
 import MessageContext from "../Context/MessageContext";
 
-function BuzzController({ team }: { team: Team }) {
+function BuzzController({ team }: { team?: Team }) {
   const { validateAnswer } = useApiContext();
   const { setTeamIdBuzzing } = useNeonBeatGame();
   const messageContext = useContext(MessageContext);
@@ -47,11 +47,11 @@ function BuzzController({ team }: { team: Team }) {
   };
 
   return <Flex className="buzzer-item w-full" justify="space-between" align="center">
-    <span>{team.name}</span>
-    <Flex>
-      <Button type="text" icon={<IoStar />} onClick={handleClickCorrect} />
-      <Button type="text" icon={<IoStarHalf />} onClick={handleClickHalf} />
-      <Button type="text" icon={<IoStarOutline />} onClick={handleClickWrong} />
+    <span>{team?.name}</span>
+    <Flex gap="large">
+      <Button type="text" icon={<IoCheckmarkDoneSharp color="green" />} onClick={handleClickCorrect} />
+      <Button type="text" icon={<IoCheckmarkSharp color="orange" />} onClick={handleClickHalf} />
+      <Button type="text" icon={<IoCloseSharp color="red" />} onClick={handleClickWrong} />
     </Flex>
   </Flex>;
 }
