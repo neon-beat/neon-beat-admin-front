@@ -228,11 +228,11 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
 
   const grantTeamPoints = useCallback(async (team: Team, points: number) => {
     try {
-      if (!team.buzzer_id) {
-        messageApi.error(`Team ${team.name} is not paired with a buzzer`);
+      if (!team.id) {
+        messageApi.error('Invalid team ID');
         return;
       }
-      await postScore(team.buzzer_id, points);
+      await postScore(team.id, points);
       messageApi.success(`Granted ${points} points to team ${team.name}`);
       loadTeams();
     } catch (error) {
