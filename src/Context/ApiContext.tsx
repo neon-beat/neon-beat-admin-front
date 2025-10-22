@@ -381,7 +381,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   }, [apiBaseUrl, getAdminHeaders]);
 
   const postScore = useCallback(async (team_id: string, delta: number): Promise<void> => {
-    const response = await fetch(`${apiBaseUrl}/teams/${team_id}/score`, {
+    const response = await fetch(`${apiBaseUrl}/admin/teams/${team_id}/score`, {
       method: 'POST',
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
