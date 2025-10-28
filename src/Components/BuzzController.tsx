@@ -1,7 +1,7 @@
 import type { Team } from "../Context/GameManagementContext";
 import { Button, Flex } from "antd";
 import '../css/buzzer-item.css';
-import { IoCheckmarkDoneSharp, IoCheckmarkSharp, IoCloseSharp, IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
+import { IoCheckmarkDoneSharp, IoCheckmarkSharp, IoCloseSharp} from "react-icons/io5";
 import { useApiContext } from "../Hooks/useApiContext";
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 import { useContext } from "react";
