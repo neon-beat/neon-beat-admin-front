@@ -5,23 +5,22 @@ import TeamItem from "./TeamItem";
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 
 function TeamPairingModal(
-  { open, onClose, teamList, selectedTeam, onManualPairing, onAutoPairingClick }
+  { open, onClose, selectedTeam, onManualPairing, onAutoPairingClick }
     : {
       open: boolean,
       onClose: () => void,
-      teamList?: Team[],
       selectedTeam?: Team,
       onManualPairing?: (team: Team, buzzerId: string) => void,
       onAutoPairingClick?: (team: Team) => void,
     }) {
-  const [currentPairingTeam, setCurrentPairingTeam] = useState<Team | undefined>();
+  const [currentManualPairingTeam, setCurrentManualPairingTeam] = useState<Team | undefined>();
 
-  const { buzzers } = useNeonBeatGame();
+  const { buzzers, teams } = useNeonBeatGame();
 
   const handleBuzzerClick = (buzzerId: string) => {
-    if (currentPairingTeam && onManualPairing) {
-      onManualPairing(currentPairingTeam, buzzerId);
-      setCurrentPairingTeam(undefined);
+    if (currentManualPairingTeam && onManualPairing) {
+      onManualPairing(currentManualPairingTeam, buzzerId);
+      setCurrentManualPairingTeam(undefined);
     }
   };
 
@@ -33,7 +32,7 @@ function TeamPairingModal(
   }
 
   useEffect(() => {
-    setCurrentPairingTeam(selectedTeam);
+    setCurrentManualPairingTeam(selectedTeam);
   }, [selectedTeam]);
 
   return <Modal
@@ -42,13 +41,14 @@ function TeamPairingModal(
     onCancel={onClose}
     footer={null}
   >
-    {(teamList && teamList.length && teamList.length > 0) ? teamList.map(team => (
+    {(teams && teams.length && teams.length > 0) ? teams.map(team => (
       <TeamItem
         key={team.id}
         team={team}
-        onManualPairingClick={checkManualPairingEnabled() ? () => setCurrentPairingTeam(team) : undefined}
+        onManualPairingClick={checkManualPairingEnabled() ? () => setCurrentManualPairingTeam(team) : undefined}
         onAutoPairingClick={team?.id ? onAutoPairingClick : undefined}
-        isSelected={currentPairingTeam?.name === team.name}
+        isSelected={currentManualPairingTeam?.name === team.name}
+        showScores={false}
       />
     ))
       : <p>No teams available for pairing.</p>

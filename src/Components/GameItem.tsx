@@ -43,7 +43,6 @@ function GameItem({ game, isLoadedGame }: { game: Game, isLoadedGame?: boolean }
     <TeamPairingModal
       open={buzzerPairingModalOpen}
       onClose={() => setBuzzerPairingModalOpen(false)}
-      teamList={game.teams}
       onAutoPairingClick={(team) => team?.id ? startAutoPairingTeam(team.id) : undefined}
     />
   </Flex>);

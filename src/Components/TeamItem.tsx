@@ -1,12 +1,12 @@
 import { Button, Flex } from "antd";
 import type { Team } from "../Hooks/useNeonBeatGame";
 import { CloseOutlined } from "@ant-design/icons";
-import { FaHand, FaLink, FaMinus, FaPlus } from "react-icons/fa6";
+import { FaHand, FaHourglassHalf, FaLink, FaMinus, FaPlus } from "react-icons/fa6";
 import '../css/team-item.css';
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 
 function TeamItem(
-  { team, onManualPairingClick, onAutoPairingClick, onDelete, onAddPoint, onRemovePoint, isSelected }
+  { team, onManualPairingClick, onAutoPairingClick, onDelete, onAddPoint, onRemovePoint, isSelected, showScores = true }
     : {
       team: Team,
       onManualPairingClick?: () => void,
@@ -15,8 +15,9 @@ function TeamItem(
       onAddPoint?: () => void,
       onRemovePoint?: () => void,
       isSelected?: boolean,
+      showScores?: boolean,
     }) {
-  const { canPairTeams } = useNeonBeatGame();
+  const { canPairTeams, currentTeamPairing } = useNeonBeatGame();
   return (
     <Flex
       className={`team-item ${isSelected === true ? 'selected' : ''}`}
@@ -26,8 +27,8 @@ function TeamItem(
       key={team.id}
     >
       <Flex align="center" gap="small">
-        {team.buzzer_id ? <FaLink /> : ''}
-        <span>{team.name}: {typeof team.score !== 'undefined' ? `${team.score} point${team.score === 1 ? '' : 's'}` : ''}</span>
+        {team.buzzer_id ? <FaLink color="green" /> : ''}
+        <span>{team.name}{(showScores === true && typeof team.score !== 'undefined') ? `: ${team.score} point${team.score === 1 ? '' : 's'}` : ''}</span>
       </Flex>
       <Flex gap="small" align="center">
         {onManualPairingClick && <Button
@@ -37,7 +38,7 @@ function TeamItem(
         />}
         {onAutoPairingClick && <Button
           type="text"
-          icon={<FaLink />}
+          icon={currentTeamPairing?.id === team.id ? <FaHourglassHalf /> : <FaLink />}
           onClick={() => onAutoPairingClick(team)}
           disabled={!canPairTeams()}
         />}

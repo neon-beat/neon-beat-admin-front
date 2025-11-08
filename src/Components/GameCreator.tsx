@@ -118,7 +118,6 @@ function GameCreator(
     <TeamPairingModal
       open={buzzerPairingModalOpen}
       onClose={() => setBuzzerPairingModalOpen(false)}
-      teamList={teamList}
     />
   </Flex>;
 }
