@@ -91,6 +91,7 @@ interface GameManagementContextType {
 
   // Tests
   canPairTeams: () => boolean;
+  canDeleteTeam: () => boolean;
   canStartGame: () => boolean;
   canResumeGame: () => boolean;
   canPauseGame: () => boolean;
@@ -316,6 +317,12 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     return true;
   }, [gameState]);
 
+  const canDeleteTeam = useCallback((): boolean => {
+    if (!gameState) return true;
+    if (gameState === GameState.PREP_READY) return true;
+    return false;
+  }, [gameState]);
+
   const canStartGame = useCallback((): boolean => {
     if (!gameState) return false;
     if (gameState === GameState.PREP_READY) return true;
@@ -461,6 +468,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
 
     // Tests
     canPairTeams,
+    canDeleteTeam,
     canStartGame,
     canResumeGame,
     canPauseGame,

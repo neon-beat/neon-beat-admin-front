@@ -9,3 +9,10 @@
 .team-item.selected {
   border-color: #892e8a;
 }
+
+.team-item .divider-vertical {
+  width: 1px;
+  height: 16px;
+  background-color: #424242;
+  margin: 0 8px;
+}

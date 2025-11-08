@@ -26,6 +26,7 @@ interface ApiContextType {
   postPlaylist: (payload: Playlist) => Promise<void>;
   getTeams: () => Promise<Team[]>;
   postTeam: (payload: { name: string; buzzer_id?: string; score: number }) => Promise<void>;
+  deleteTeam: (teamId: string) => Promise<void>;
   startAutoPairingTeam: (teamId: string) => Promise<void>;
   postScore: (buzzer_id: string, points: number) => Promise<void>;
   isServerReady: boolean | null;
@@ -236,6 +237,17 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const data = await response.json();
     return data.teams;
   }, [apiBaseUrl]);
+
+  const deleteTeam = useCallback(async (teamId: string): Promise<void> => {
+    const response = await fetch(`${apiBaseUrl}/admin/teams/${teamId}`, {
+      method: 'DELETE',
+      headers: getAdminHeaders(),
+    });
+    if (!response.ok) {
+      const errorMessage = await getErrorMessage(response, 'Failed to delete team');
+      throw new Error(errorMessage);
+    }
+  }, [apiBaseUrl, getAdminHeaders]);
 
   const loadGame = useCallback(async (gameId: string): Promise<Game> => {
     const response = await fetch(`${apiBaseUrl}/admin/games/${gameId}/load`, {
@@ -476,6 +488,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     nextSong,
     startAutoPairingTeam,
     putTeam,
+    deleteTeam,
     deleteGame,
     validateAnswer,
   };

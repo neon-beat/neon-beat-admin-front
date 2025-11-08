@@ -1,7 +1,6 @@
 import { Button, Flex } from "antd";
 import type { Team } from "../Hooks/useNeonBeatGame";
-import { CloseOutlined } from "@ant-design/icons";
-import { FaHand, FaHourglassHalf, FaLink, FaMinus, FaPlus } from "react-icons/fa6";
+import { FaHand, FaHourglassHalf, FaLink, FaMinus, FaPlus, FaXmark } from "react-icons/fa6";
 import '../css/team-item.css';
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 
@@ -42,6 +41,7 @@ function TeamItem(
           onClick={() => onAutoPairingClick(team)}
           disabled={!canPairTeams()}
         />}
+        <div className="divider-vertical" />
         {onRemovePoint && <Button
           type="text"
           icon={<FaMinus />}
@@ -52,9 +52,10 @@ function TeamItem(
           icon={<FaPlus />}
           onClick={onAddPoint}
         />}
+        <div className="divider-vertical" />
         {onDelete && <Button
           type="text"
-          icon={<CloseOutlined />}
+          icon={<FaXmark color="red" />}
           onClick={onDelete}
         />}
       </Flex>

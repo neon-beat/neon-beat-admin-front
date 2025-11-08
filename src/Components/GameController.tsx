@@ -129,7 +129,6 @@ function GameController() {
       </Flex>
       <TeamPairingModal
         open={isTeamPairingModalOpen}
-        teamList={game.teams}
         onClose={() => setIsTeamPairingModalOpen(false)}
         onManualPairing={handleManualPairing}
         onAutoPairingClick={(team) => team?.id ? startAutoPairingTeam(team.id) : undefined}
