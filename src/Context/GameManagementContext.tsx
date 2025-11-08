@@ -28,6 +28,7 @@ export interface Game {
   status?: string;
   created_at?: string;
   updated_at?: string;
+  current_song_index: number;
 }
 
 export interface Playlist {
@@ -417,6 +418,12 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     if (!game) return;
     loadTeams();
   }, [game, loadTeams]);
+
+  useEffect(() => {
+    if (gameState === GameState.REVEAL) {
+      setTeamIdBuzzing(undefined);
+    }
+  }, [gameState]);
 
   useEffect(() => {
     if (!sse) return;

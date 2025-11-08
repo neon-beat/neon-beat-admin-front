@@ -16,7 +16,11 @@ function GameItem({ game, isLoadedGame }: { game: Game, isLoadedGame?: boolean }
   return (<Flex justify="space-between" align="center" gap="small" className="!p-2 !pl-4 border-1 border-[#424242] rounded-full">
     <Flex vertical className="grow-1">
       <span>{game.name}</span>
-      <span className="!text-xs">{game?.created_at ? `Created on ${new Date(game.created_at).toLocaleDateString()}` : 'Unknow creation date'}</span>
+      <Flex gap="small">
+        <span className="!text-xs">{game?.created_at ? `Created on ${new Date(game.created_at).toLocaleDateString()}` : 'Unknown creation date'}</span>
+        <span className="!text-xs">{game?.updated_at ? `Last played on ${new Date(game.updated_at).toLocaleDateString()}` : 'Unknown last play date'}</span>
+        <span className="!text-xs">{game?.current_song_index && game.playlist.songs?.length ? `Progression : ${game.current_song_index} / ${game.playlist.songs?.length}` : 'Unknown progression'}</span>
+      </Flex>
     </Flex>
     <Flex gap="small">
       {isLoadedGame === true && <>
