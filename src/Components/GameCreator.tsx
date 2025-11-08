@@ -39,15 +39,15 @@ function GameCreator(
 
   const handleClickCreateGame = async () => {
     if (!gameName) {
-      messageApi.error('Please enter a game name.');
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Please enter a game name.');
       return;
     }
     if (!selectedPlaylistId) {
-      messageApi.error('Please select a playlist.');
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Please select a playlist.');
       return;
     }
     if (teamList.length === 0) {
-      messageApi.error('Please add at least one team.');
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Please add at least one team.');
       return;
     }
     if (onCreateGame) {
@@ -68,14 +68,14 @@ function GameCreator(
     {!selectedPlaylistId && <Typography.Text>Select a Playlist:</Typography.Text>}
     {selectedPlaylistId && (
       <Flex justify="space-between">
-      <Typography.Text>Selected Playlist: {playlists?.find((p) => p.id === selectedPlaylistId)?.name}</Typography.Text>
-      <Checkbox 
-        checked={shufflePlaylist}
-        onChange={(e) => setShufflePlaylist(e.target.checked)}
-      >
-        Shuffle Playlist
-      </Checkbox>
-    </Flex>
+        <Typography.Text>Selected Playlist: {playlists?.find((p) => p.id === selectedPlaylistId)?.name}</Typography.Text>
+        <Checkbox
+          checked={shufflePlaylist}
+          onChange={(e) => setShufflePlaylist(e.target.checked)}
+        >
+          Shuffle Playlist
+        </Checkbox>
+      </Flex>
     )}
     <Flex vertical gap="small" className="grow-1">
       {playlists && playlists.length > 0 ? (

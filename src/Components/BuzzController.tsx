@@ -1,7 +1,7 @@
 import type { Team } from "../Context/GameManagementContext";
 import { Button, Flex } from "antd";
 import '../css/buzzer-item.css';
-import { IoCheckmarkDoneSharp, IoCheckmarkSharp, IoCloseSharp} from "react-icons/io5";
+import { IoCheckmarkDoneSharp, IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 import { useApiContext } from "../Hooks/useApiContext";
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 import { useContext } from "react";
@@ -22,7 +22,7 @@ function BuzzController({ team }: { team?: Team }) {
       setTeamIdBuzzing(undefined);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to validate answer';
-      messageApi.error(`Error validating answer: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error validating answer: ${message}`);
     }
   };
 
@@ -32,7 +32,7 @@ function BuzzController({ team }: { team?: Team }) {
       setTeamIdBuzzing(undefined);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to validate answer';
-      messageApi.error(`Error validating answer: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error validating answer: ${message}`);
     }
   };
 
@@ -42,7 +42,7 @@ function BuzzController({ team }: { team?: Team }) {
       setTeamIdBuzzing(undefined);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to validate answer';
-      messageApi.error(`Error validating answer: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error validating answer: ${message}`);
     }
   };
 

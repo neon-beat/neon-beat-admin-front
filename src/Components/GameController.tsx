@@ -25,40 +25,40 @@ function GameController() {
   const handleStartGame = async () => {
     try {
       await startGame();
-      messageApi.success('Game started successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game started successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to start game';
-      messageApi.error(`Error starting game: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error starting game: ${message}`);
     }
   };
 
   const handleResumeGame = async () => {
     try {
       await resumeGame();
-      messageApi.success('Game resumed successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game resumed successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to resume game';
-      messageApi.error(`Error resuming game: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error resuming game: ${message}`);
     }
   };
 
   const handlePauseGame = async () => {
     try {
       await pauseGame();
-      messageApi.success('Game paused successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game paused successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to pause game';
-      messageApi.error(`Error pausing game: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error pausing game: ${message}`);
     }
   };
 
   const handleRevealSong = async () => {
     try {
       await revealSong();
-      messageApi.success('Song reveal successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Song reveal successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to reveal song';
-      messageApi.error(`Error revealing song: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error revealing song: ${message}`);
     }
   };
 
@@ -66,20 +66,20 @@ function GameController() {
     try {
       await nextSong();
       resetFoundFields();
-      messageApi.success('Moved to next song');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Moved to next song');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to move to next song';
-      messageApi.error(`Error moving to next song: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error moving to next song: ${message}`);
     }
   };
 
   const handleStopGame = async () => {
     try {
       await stopGame();
-      messageApi.success('Game stopped successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game stopped successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to stop game';
-      messageApi.error(`Error stopping game: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error stopping game: ${message}`);
     }
   };
 
@@ -87,10 +87,10 @@ function GameController() {
     try {
       await endGame();
       resetWholeGame();
-      messageApi.success('Game ended successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game ended successfully');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to end game';
-      messageApi.error(`Error ending game: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error ending game: ${message}`);
     }
   };
 
@@ -98,10 +98,10 @@ function GameController() {
     try {
       const updatedTeam = { ...team, buzzer_id: buzzerId };
       await putTeam(updatedTeam as TeamPayload);
-      messageApi.success(`Paired team ${team.name} with buzzer ${buzzerId}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success(`Paired team ${team.name} with buzzer ${buzzerId}`);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to pair team';
-      messageApi.error(`Error pairing team: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error pairing team: ${message}`);
     }
   };
 

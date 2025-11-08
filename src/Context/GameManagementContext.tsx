@@ -141,7 +141,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       setTeams(data);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error occurred';
-      messageApi.error(`Error fetching teams: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error fetching teams: ${message}`);
     }
   }, [getTeams, messageApi]);
 
@@ -151,7 +151,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       setGames(data);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error occurred';
-      messageApi.error(`Error fetching games: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error fetching games: ${message}`);
     }
   }, [getGames, messageApi]);
 
@@ -161,20 +161,20 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       setPlaylists(data);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error occurred';
-      messageApi.error(`Error fetching playlists: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error fetching playlists: ${message}`);
     }
   }, [getPlaylists, messageApi]);
 
   const importPlaylist = useCallback(async (payload: Playlist) => {
     await postPlaylist(payload);
-    messageApi.success('Playlist imported successfully');
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Playlist imported successfully');
     loadPlaylists();
   }, [postPlaylist, messageApi, loadPlaylists]);
 
   const createGameWithPlaylist = useCallback(async (payload: GamePayload, shuffle: boolean) => {
     const newGame = await postGame(payload, shuffle);
     setGame(newGame);
-    messageApi.success('Game created successfully');
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game created successfully');
     loadGames();
   }, [postGame, messageApi, loadGames]);
 
@@ -186,25 +186,25 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
 
     await postTeam(payload);
     await loadTeams();
-    messageApi.success('Team created successfully');
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Team created successfully');
   }, [postTeam, loadTeams, messageApi]);
 
   const loadSelectedGame = useCallback(async (gameId: string) => {
     try {
       const selectedGame = await loadGame(gameId);
       setGame(selectedGame);
-      messageApi.success('Game loaded successfully');
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game loaded successfully');
       loadTeams();
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error occurred';
-      messageApi.error(`Error loading game: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error loading game: ${message}`);
     }
   }, [loadGame, messageApi, loadTeams]);
 
   const revealField = useCallback(async (field: Field, kind: string) => {
     try {
       if (!song) {
-        messageApi.error('No song is currently active');
+        if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('No song is currently active');
         return;
       }
       const payload: FieldRevealPayload = {
@@ -219,25 +219,25 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       if (data.bonus_fields) {
         setBonusFieldsFound(data.bonus_fields);
       }
-      messageApi.success(`Field ${field.key} revealed successfully`);
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success(`Field ${field.key} revealed successfully`);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to reveal field';
-      messageApi.error(`Error revealing field: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error revealing field: ${message}`);
     }
   }, [postRevealField, messageApi, song]);
 
   const grantTeamPoints = useCallback(async (team: Team, points: number) => {
     try {
       if (!team.id) {
-        messageApi.error('Invalid team ID');
+        if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Invalid team ID');
         return;
       }
       await postScore(team.id, points);
-      messageApi.success(`Granted ${points} points to team ${team.name}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success(`Granted ${points} points to team ${team.name}`);
       loadTeams();
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to grant points to team';
-      messageApi.error(`Error granting points: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error granting points: ${message}`);
     }
   }, [postTeam, messageApi, loadTeams]);
 
@@ -260,7 +260,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     if (!teams) return;
     const data = JSON.parse(event.data);
     const { team_id, buzzer_id } = data;
-    messageApi.success(`Team ${teams.find((t) => t.id === team_id)?.id} paired with Buzzer ${buzzer_id}`);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success(`Team ${teams.find((t) => t.id === team_id)?.id} paired with Buzzer ${buzzer_id}`);
     loadTeams();
     setCurrentTeamPairing(undefined);
   }, [teams, messageApi, loadTeams]);
@@ -271,18 +271,18 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     const { team_id } = data;
     const team = teams.find((t) => t.id === team_id);
     if (!team) {
-      messageApi.error(`Received pairing waiting for unknown team ID: ${team_id}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Received pairing waiting for unknown team ID: ${team_id}`);
       return;
     }
     setCurrentTeamPairing(team);
-    messageApi.info(`Team ${team.name} is waiting for buzzer pairing`);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.info(`Team ${team.name} is waiting for buzzer pairing`);
   }, [teams, messageApi]);
 
   const onPhaseChanged = useCallback((event: MessageEvent) => {
     const data = JSON.parse(event.data);
     const { phase } = data;
     setGameState(phase as GameState);
-    messageApi.info(`Game phase changed to: ${phase}`);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.info(`Game phase changed to: ${phase}`);
     if (data.song) {
       setSong(data.song as Song);
       if (data.found_point_fields) setPointFieldsFound(data.found_point_fields);
@@ -299,14 +299,14 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
   const onTeamCreated = useCallback((event: MessageEvent) => {
     const data = JSON.parse(event.data);
     const { team_name } = data;
-    messageApi.success(`New team created: ${team_name}`);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success(`New team created: ${team_name}`);
     loadTeams();
   }, [messageApi, loadTeams]);
 
   const onTestBuzz = useCallback((event: MessageEvent) => {
     const data = JSON.parse(event.data);
     const { buzzer_id } = data;
-    messageApi.info(`Test buzz received from Buzzer ${buzzer_id}`);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.info(`Test buzz received from Buzzer ${buzzer_id}`);
   }, [messageApi]);
 
   // Tests

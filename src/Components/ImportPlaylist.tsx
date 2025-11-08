@@ -34,7 +34,7 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: Playlist) => Promis
     } catch (error: unknown) {
       console.log('Import error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      messageApi.error(`Error importing playlist: ${errorMessage}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error importing playlist: ${errorMessage}`);
     } finally {
       setImportLoading(false);
       setModalOpen(false);

@@ -37,7 +37,7 @@ function AdminHome() {
     >
       <Flex vertical justify="space-between" gap="large" className="h-full">
         <Flex vertical justify="flex-start" gap="large">
-          {import.meta.env.VITE_DEBUG_GAMESTATE && <Typography.Title level={5} className="text-center !w-full">
+          {import.meta.env.VITE_DEBUG_GAMESTATE === true && <Typography.Title level={5} className="text-center !w-full">
             Debug Game State: {gameState}
           </Typography.Title>}
           {showGameList() && (
@@ -69,7 +69,7 @@ function AdminHome() {
           )}
           {song?.id && <SongController />}
           {song?.id && youtubeVideoId && (
-            <Collapse 
+            <Collapse
               size="small"
               items={[{
                 key: 'youtube-preview',

@@ -122,7 +122,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     };
 
     eventSource.onerror = (error) => {
-      messageApi.error('SSE connection error');
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('SSE connection error');
       console.error('SSE error:', error);
       eventSource.close();
     };
@@ -135,9 +135,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     try {
       const data = JSON.parse(event.data);
       if (data.token) setAdminToken(data.token);
-      else messageApi.error('Admin token not found in handshake event');
+      else if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Admin token not found in handshake event');
     } catch {
-      messageApi.error('Error parsing handshake event for admin token');
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Error parsing handshake event for admin token');
     }
   }, [setAdminToken, messageApi]);
 
@@ -423,10 +423,10 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     searchForBackend()
       .then(() => {
         initSse();
-        messageApi.success('Connected to server successfully');
+        if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Connected to server successfully');
       })
       .catch((error) => {
-        messageApi.error(`Error connecting to backend: ${error.message}`);
+        if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error connecting to backend: ${error.message}`);
       });
   }, [messageApi, apiBaseUrl, initSse, searchForBackend]);
 
