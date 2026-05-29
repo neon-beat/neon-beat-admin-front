@@ -27,9 +27,9 @@ function TeamItem(
     >
       <Flex align="center" gap="small">
         {team.buzzer_id ? <FaLink color="green" /> : ''}
-        <span>{team.name}{(showScores === true && typeof team.score !== 'undefined') ? `: ${team.score} point${team.score === 1 ? '' : 's'}` : ''}</span>
+        <span>{team.name}{(showScores === true && typeof team.score !== 'undefined') ? `: ${team.score} pt${team.score === 1 ? '' : 's'}` : ''}</span>
       </Flex>
-      <Flex gap="small" align="center">
+      <Flex align="center">
         {onManualPairingClick && <Button
           type="text"
           icon={<FaHand />}
@@ -41,7 +41,7 @@ function TeamItem(
           onClick={() => onAutoPairingClick(team)}
           disabled={!canPairTeams()}
         />}
-        <div className="divider-vertical" />
+        {(onAutoPairingClick || onManualPairingClick) && <div className="divider-vertical" />}
         {onRemovePoint && <Button
           type="text"
           icon={<FaMinus />}
@@ -52,7 +52,7 @@ function TeamItem(
           icon={<FaPlus />}
           onClick={onAddPoint}
         />}
-        <div className="divider-vertical" />
+        {onDelete && <div className="divider-vertical" />}
         {onDelete && <Button
           type="text"
           icon={<FaXmark color="red" />}
