@@ -8,8 +8,8 @@ import { useContext } from "react";
 import MessageContext from "../Context/MessageContext";
 
 function BuzzController({ team }: { team?: Team }) {
-  const { validateAnswer } = useApiContext();
-  const { setTeamIdBuzzing } = useNeonBeatGame();
+  const { submitValidation } = useApiContext();
+  const { question, setTeamIdBuzzing } = useNeonBeatGame();
   const messageContext = useContext(MessageContext);
   if (!messageContext) {
     throw new Error('BuzzController must be used within a MessageContext.Provider');
@@ -17,32 +17,35 @@ function BuzzController({ team }: { team?: Team }) {
   const { messageApi } = messageContext;
 
   const handleClickCorrect = async () => {
+    if (!question) return;
     try {
-      await validateAnswer({ valid: 'correct' });
+      await submitValidation({ question_id: question.id, valid: 'correct' });
       setTeamIdBuzzing(undefined);
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to validate answer';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error validating answer: ${message}`);
+      const message = error instanceof Error ? error.message : 'Failed to submit validation';
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error submitting validation: ${message}`);
     }
   };
 
   const handleClickHalf = async () => {
+    if (!question) return;
     try {
-      await validateAnswer({ valid: 'incomplete' });
+      await submitValidation({ question_id: question.id, valid: 'incomplete' });
       setTeamIdBuzzing(undefined);
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to validate answer';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error validating answer: ${message}`);
+      const message = error instanceof Error ? error.message : 'Failed to submit validation';
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error submitting validation: ${message}`);
     }
   };
 
   const handleClickWrong = async () => {
+    if (!question) return;
     try {
-      await validateAnswer({ valid: 'wrong' });
+      await submitValidation({ question_id: question.id, valid: 'wrong' });
       setTeamIdBuzzing(undefined);
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to validate answer';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error validating answer: ${message}`);
+      const message = error instanceof Error ? error.message : 'Failed to submit validation';
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error submitting validation: ${message}`);
     }
   };
 

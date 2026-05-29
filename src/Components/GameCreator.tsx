@@ -25,7 +25,7 @@ function GameCreator(
 
   const { messageApi } = useContext(MessageContext)!;
 
-  const { playlists } = useNeonBeatGame();
+  const { questionsSequences } = useNeonBeatGame();
 
   const addTeam = async (name: string) => {
     if (name.trim() === '') return;
@@ -43,7 +43,7 @@ function GameCreator(
       return;
     }
     if (!selectedPlaylistId) {
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Please select a playlist.');
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('Please select a questions sequence.');
       return;
     }
     if (teamList.length === 0) {
@@ -53,7 +53,7 @@ function GameCreator(
     if (onCreateGame) {
       await onCreateGame({
         name: gameName,
-        playlist_id: selectedPlaylistId,
+        questions_sequence_id: selectedPlaylistId,
         teams: teamList,
       }, shufflePlaylist);
     }
@@ -65,32 +65,32 @@ function GameCreator(
 
   return <Flex vertical gap="small" className="nba-game-creator">
     <Input placeholder="Game Name" type="text" value={gameName} onChange={(e) => setGameName(e.target.value)} />
-    {!selectedPlaylistId && <Typography.Text>Select a Playlist:</Typography.Text>}
+    {!selectedPlaylistId && <Typography.Text>Select a Questions Sequence:</Typography.Text>}
     {selectedPlaylistId && (
       <Flex justify="space-between">
-        <Typography.Text>Selected Playlist: {playlists?.find((p) => p.id === selectedPlaylistId)?.name}</Typography.Text>
+        <Typography.Text>Selected Sequence: {questionsSequences?.find((p) => p.id === selectedPlaylistId)?.name}</Typography.Text>
         <Checkbox
           checked={shufflePlaylist}
           onChange={(e) => setShufflePlaylist(e.target.checked)}
         >
-          Shuffle Playlist
+          Shuffle Questions
         </Checkbox>
       </Flex>
     )}
     <Flex vertical gap="small" className="grow-1">
-      {playlists && playlists.length > 0 ? (
-        playlists.map((playlist) => (
+      {questionsSequences && questionsSequences.length > 0 ? (
+        questionsSequences.map((seq) => (
           <Button
-            key={playlist.id}
-            className={selectedPlaylistId === playlist.id ? '!border-main-purple !text-main-purple' : ''}
+            key={seq.id}
+            className={selectedPlaylistId === seq.id ? '!border-main-purple !text-main-purple' : ''}
             type="default"
-            onClick={() => setSelectedPlaylistId(playlist.id)}
+            onClick={() => setSelectedPlaylistId(seq.id)}
           >
-            {playlist.name}
+            {seq.name}
           </Button>
         ))
       ) : (
-        <p>No playlists available.</p>
+        <p>No questions sequences available.</p>
       )}
     </Flex>
     <Typography.Text>Teams</Typography.Text>

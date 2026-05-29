@@ -1,0 +1,6797 @@
+{
+  "name": "Full playlist",
+  "songs": [
+    {
+      "url": "https://www.youtube.com/watch?v=LOZuxwVk7TU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Toxic"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Britney Spears"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2004"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-Pop, Pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "In the Zone"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Joseph Kahn"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Jive Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2JYUfiqUk14",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Dis-moi oui (Marina)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Keen'V"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2014"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Saltimbanque"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Dance-pop, French Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=MFhKnRLEihE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Calogero - Face à la mer (Clip officiel) ft. Passi"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "CalogeroVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=pAgnJDJN4VA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Back In Black"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "AC/DC"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1980"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Back In Black"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Eric Dionysian, Eric Liebowitz"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Atlantic Records"
+        },
+        {
+          "key": "producer",
+          "points": 1,
+          "value": "Robert John \"Mutt\" Lange"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Guns N' Roses - Sweet Child o' Mine (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Guns N' Roses"
+        },
+        {
+          "key": "channel",
+          "points": 1,
+          "value": "GunsNRosesVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1988"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Appetite for Destruction"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Nigel Dick"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Geffen Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=L93-7vRfxNs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Aerodynamic"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Daft Punk"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Discovery"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2001"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electronic, French House, Progressive House"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Kazuhisa Takenouchi"
+        },
+        {
+          "key": "associatedProject",
+          "points": 1,
+          "value": "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=etAIpkdhU9Q",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Hells Bells"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "AC/DC"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Back in Black"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1980"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock, Heavy Metal"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8SbUC-UaAxE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Guns N' Roses - November Rain"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "GunsNRosesVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2bjk26RwjyU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "OrelSan - Basique [CLIP OFFICIEL]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "OrelSan"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2017"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop, Rap"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "La fête est finie"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=yBwtAySu7Mg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "06h16"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Casseurs Flowters"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Comment c'est loin"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2015"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Comment c'est loin"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QCFljvIoTIY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Fox Stevenson - Lemonade (Official Audio)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Fox Stevenson"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2019"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Drum & Bass, Electronic"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Single"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qBE9TZP26FI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Business Man"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Tom Cardy"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fzQ6gRAEoy0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Porter Robinson & Madeon - Shelter (Official Video) (Short Film with A-1 Pictures & Crunchyroll)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Porter Robinson"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Zasx9hjo4WY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Ignite (ft. Zedd) | Worlds 2016 - League of Legends"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "League of Legends"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=XA2YEHn-A8Q",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "TWICE \"Alcohol-Free\" M/V"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "JYP Entertainment"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CgCVZdcKcqY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "BLACKPINK - ‘뛰어(JUMP)’ M/V"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "BLACKPINK"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dly6p4Fu5TE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Jennifer Lopez - Jenny from the Block (Official HD Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "JenniferLopezVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=EDwb9jOVRtU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Madonna - Hung Up (Official Video) [HD]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Madonna"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xFYQQPAOz7Y",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Lose Yourself"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Eminem"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2002"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hip hop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Music from and Inspired by the Motion Picture 8 Mile"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "8 Mile"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=uelHwf8o7_U",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Love The Way You Lie"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Eminem ft. Rihanna"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2010"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Recovery"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hip Hop, Pop Rap, R&B"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Joseph Kahn"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Shady Records, Aftermath Entertainment, Interscope Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=n1E0QR4LAL4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "La vie par procuration"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Jean-Jacques Goldman"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1985"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Non homologué"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Pop rock"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0-5vdra91Wk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Il changeait la vie"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Jean-Jacques Goldman"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1987"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Entre gris clair et gris foncé"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson Française, Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=WUaeNidruxs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Le Jerk"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Thierry Hazard"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1990"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Pop Music"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop"
+        },
+        {
+          "key": "videoType",
+          "points": 1,
+          "value": "Music Video"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "CBS Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ROqfklvWDAk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Hey Oh"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Tragédie"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2003"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop, R&B, Pop Rap"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Tragédie"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=zxxzjHpivmA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Façon Sex"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Tribal King"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2006"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Façon Sex"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Reggae, Dancehall, French Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0J3vgcE5i2o",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Nelly Furtado - Promiscuous (Official Music Video) ft. Timbaland"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "NellyFurtadoVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=hHUbLv4ThOo",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Timber"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Pitbull featuring Kesha"
+        },
+        {
+          "key": "artist(videoUploader)",
+          "points": 1,
+          "value": "PitbullVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2013"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-pop, Hip hop, Country rap"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Global Warming: Meltdown"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "David Rousseau"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "RCA Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CdXesX6mYUE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "International Love"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Pitbull ft. Chris Brown"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2011"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Planet Pit"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-pop, Electropop, Latin pop"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "David Rousseau"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=KyXW64L-XZA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Celui (Clip Officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Colonel Reyel"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2011"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Reggae, Dancehall, French Pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Au Rapport"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=quhrvpoSp4I",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Shy'm - Femme de Couleur (Clip Officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "SHY'M"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=vGxOs9OrLYk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sheryfa Luna - Il Avait Les Mots (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "SheryfaLunaVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=OC2R5fvJsxo",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Diam's - La Boulette (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Diam's officiel"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=TwhoaPgBwI8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Diam's - Confessions nocturnes feat. Vitaa (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Diam's officiel"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=x-biTuOrYkk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Fatal Bazooka feat. Vitoo - Mauvaise Foi nocturne (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "FAT TV"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ype_r1eq_Ak",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Kenza Farah - Je me bats"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "kenzafarahVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=PI9yKr39vGI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Fatal Bazooka - Fous Ta Cagoule (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "FAT TV"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=y_fB0IMbq54",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Denzel Curry, Gizzle, Bren Joy - Dynasties & Dystopia | Arcane League of Legends | Riot Games Music"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Riot Games Music"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=j-RpvIuazmc",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Stromae, Pomme - “Ma Meilleure Ennemie” (from Arcane Season 2) [Official Music Video]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "League of Legends"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HgzGwKwLmgM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Queen - Don't Stop Me Now (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Queen Official"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rY0WxgSXdEE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Queen - Another One Bites the Dust (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Queen Official"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=3T1c7GkzRQQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Police - Roxanne (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ThePoliceVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=nH0vjLwMyc4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Police - Can't Stand Losing You (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ThePoliceVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=djV11Xbc914",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "a-ha - Take On Me (Official Video) [4K]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "a-ha"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lDK9QqIzhwk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Bon Jovi - Livin' On A Prayer"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "BonJoviVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=KrZHPOeOxQQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Bon Jovi - You Give Love A Bad Name"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "BonJoviVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=d27gTrPPAyk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sting - Englishman In New York"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "StingVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wHylQRVN2Qs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sting - Russians"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "StingVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=98W9QuMq-2k",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "U2 - Vertigo (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "U2VEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=e3-5YC_oHjE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "U2 - I Still Haven't Found What I'm Looking For (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "U2VEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=K2vVU4aR5Lg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Coldplay - WE PRAY (TWICE Version) (Official Visualiser)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Coldplay"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dvgZkm1xWPE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Coldplay - Viva La Vida (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Coldplay"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=EPhWR4d3FJQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Bruce Springsteen - Born in the U.S.A. (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "BruceSpringsteenVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ekr2nIex040",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "APT. (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ROSÉ & Bruno Mars"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2024"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "K-pop, Pop, R&B"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "APT. (Single)"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Daniel Ramos, Bruno Mars"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "The Black Label, Atlantic Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=OPf0YbXqDm0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Mark Ronson - Uptown Funk (Official Video) ft. Bruno Mars"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Mark Ronson ft. Bruno Mars"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2014"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Funk, Pop, Disco, R&B"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Uptown Special"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2zNSgSzhBfM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "MACKLEMORE & RYAN LEWIS - CAN'T HOLD US FEAT. RAY DALTON (OFFICIAL MUSIC VIDEO)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Macklemore & Ryan Lewis"
+        },
+        {
+          "key": "featuredArtist",
+          "points": 1,
+          "value": "Ray Dalton"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2013"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hip Hop, Pop Rap"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The Heist"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Jon Jon Augustavo, Jason Koenig, Ryan Lewis"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Macklemore LLC"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QK8mJJJvaes",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "MACKLEMORE & RYAN LEWIS - THRIFT SHOP FEAT. WANZ (OFFICIAL VIDEO)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Macklemore"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-TkrMyXYbik",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Je te promets"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Johnny Hallyday"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1987"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Rock"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Gang"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Philips"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=s3O1Xro7oAI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Allumer Le Feu"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Johnny Hallyday"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1998"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Ce que je sais"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Rock"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HXdP15Ubu6M",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Le chanteur"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "DanielBalavoineVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1978"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Le chanteur"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=85V1rIsIUm8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Daniel Balavoine - Quand on arrive en ville (1978)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "RTS Archives"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=FGBhQbmPwH8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "One More Time"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Daft Punk"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2000"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Discovery"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French House, House, Dance-Pop"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Kazuhisa Takenouchi"
+        },
+        {
+          "key": "associatedFilm",
+          "points": 1,
+          "value": "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fGZRVGlGZ6A",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "C'est comme ça"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Les Rita Mitsouko"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The No Comprendo"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1986"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop, New Wave, Rock"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=D9G1VOjN_84",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Enemy (from the series Arcane League of Legends)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Imagine Dragons x J.I.D"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2021"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Alternative Rock, Hip Hop, Pop Rock"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Mercury – Act 1 (Deluxe)"
+        },
+        {
+          "key": "usedIn",
+          "points": 1,
+          "value": "Arcane (Netflix series)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=7wtfhZwyrcc",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Imagine Dragons - Believer (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ImagineDragonsVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=OQXbcf9dflw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Patrick Bruel - Place des grands hommes (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "patrickbruelVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dLl4PZtxia8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Eagles - Hotel California (Official Audio)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Eagles"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SP7nnmfhdRg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Gérald De Palmas - J'en rêve encore (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Gérald De Palmas"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2000"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Marcher dans le sable"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_YqzuE-5RE8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Mistral gagnant"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Renaud"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Mistral gagnant"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1985"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8AF-Sm8d8yk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Dommage"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Bigflo & Oli"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2017"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "La Vraie Vie"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=R8HCKdchA90",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "La vie ne vaut rien"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Alain Souchon"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1974"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "J'ai dix ans"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_tHbSMQeCdk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Cendrillon"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Téléphone"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Au cœur de la nuit"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1980"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Rock, New Wave"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "GANGNAM STYLE (강남스타일) M/V"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "PSY"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2012"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "K-pop, Dance-pop, Electronic Dance Music"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Psy 6 (Six Rules), Part 1"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=RsW66teC0BQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Doja Cat - Boss Bitch"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Doja Cat"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2020"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Birds of Prey: The Album"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Hip Hop, R&B"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1k8craCGpgs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Don't Stop Believin'"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Journey"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1981"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Escape"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Arena Rock, Pop Rock"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Glee (TV series), The Sopranos (TV series)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xCChxBSRo1Y",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Talk Dirty To Me"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Poison"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1986"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Look What the Cat Dragged In"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Glam Metal"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HQmmM_qwG4k",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Whole Lotta Love"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Led Zeppelin"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Led Zeppelin II"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1969"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock, Blues Rock"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Top of the Pops (1970), School of Rock (2003)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ly6ZhQVnVow",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Stairway To Heaven"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Led Zeppelin"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Led Zeppelin IV"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1971"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock, Folk Rock, Progressive Rock"
+        },
+        {
+          "key": "livePerformanceLocation",
+          "points": 1,
+          "value": "Earl's Court, London"
+        },
+        {
+          "key": "livePerformanceDate",
+          "points": 1,
+          "value": "May 25, 1975"
+        },
+        {
+          "key": "officialVideoRelease",
+          "points": 1,
+          "value": "Led Zeppelin DVD (2003)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=zD80w-mPrKw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Wati By Night"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Sexion d'Assaut"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2010"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "L'École des points vitaux"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rMltoD1jCGI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Bella"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "GIMS"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2018"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Ceinture Noire"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=U-Z_bZS8t3M",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sur ma route"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Black M"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2014"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop, Pop Rap"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Les yeux plus gros que le monde"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Wati B, Sony Music"
+        },
+        {
+          "key": "vevoChannel",
+          "points": 1,
+          "value": "BlackMVEVO"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fiBLgEx6svA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Men in Black"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Will Smith"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1997"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hip hop, Pop rap, Soundtrack"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Big Willie Style"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Men in Black"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Barry Sonnenfeld"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fPO76Jlnz6c",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Gangsta's Paradise (feat. L.V.)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Coolio"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1995"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hip hop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Gangsta's Paradise"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Dangerous Minds"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Michael Jackson - Billie Jean (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Michael Jackson"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1983"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, R&B, Dance-pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Thriller"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Steve Barron"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=h_D3VFfhvs4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Michael Jackson - Smooth Criminal (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Michael Jackson"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Bad"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1988"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Dance-Pop, R&B"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Moonwalker"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=7oKPYe53h78",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "You're the One That I Want"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "John Travolta & Olivia Newton-John"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1978"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Grease (Original Motion Picture Soundtrack)"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Rock and Roll, Disco"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Grease"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4BQLE_RrTSU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "(I've Had) The Time Of My Life"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Bill Medley, Jennifer Warnes"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1987"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Adult Contemporary, Soundtrack"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Dirty Dancing (Original Soundtrack)"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Dirty Dancing"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qQzdAsjWGPg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "My Way"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Frank Sinatra"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1969"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Traditional Pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "My Way"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=GM1kzbAgo_E",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "These Boots Are Made for Walkin'"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Nancy Sinatra"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1966"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Boots"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop"
+        },
+        {
+          "key": "usedIn",
+          "points": 1,
+          "value": "Full Metal Jacket"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4fndeDfaWCg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Backstreet Boys - I Want It That Way (Official HD Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "BackstreetBoysVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6M6samPEMpM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Backstreet Boys - Everybody (Backstreet's Back) (Official HD Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "BackstreetBoysVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=emGri7i8Y2Y",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sum 41 - In Too Deep"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Sum41VEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=By7ctqcWxyM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sum 41 - Pieces"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Sum41VEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SBjQ9tuuTJQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Foo Fighters - The Pretender"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "foofightersVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SRXH9AbT280",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Emptiness Machine (Official Music Video) - Linkin Park"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Linkin Park"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=eVTXPUF4Oz4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "In The End [Official HD Music Video] - Linkin Park"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Linkin Park"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CD-E-LDc384",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Metallica: Enter Sandman (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Metallica"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=tAGnKpE4NCI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Metallica: Nothing Else Matters (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Metallica"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=YlUKcNNmywk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Red Hot Chili Peppers - Californication (Official Music Video) [HD UPGRADE]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Red Hot Chili Peppers"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rn_YodiJO6k",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Red Hot Chili Peppers - Otherside [Official Music Video] [HD UPGRADE]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Red Hot Chili Peppers"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0qanF-91aJo",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "BLACK SABBATH - \"Paranoid\" (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Black Sabbath"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=b3-QqGVt-tM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Iron Man"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Black Sabbath"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1970"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Paranoid"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Heavy Metal"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Iron Man (2008 film), The Avengers (2012 film), School of Rock (2003 film), Grand Theft Auto IV: The Lost and Damned (video game), Tony Hawk's Pro Skater 4 (video game)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=uSiHqxgE2d0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Hit the Road Jack"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Ray Charles"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1961"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "R&B, Soul"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Ray Charles Greatest Hits"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "The Nutty Professor (1996)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fnwZeLdLPdQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "La Grange"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ZZ Top"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1973"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Tres Hombres"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Blues Rock, Hard Rock"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Dazed and Confused"
+        },
+        {
+          "key": "videoGame",
+          "points": 1,
+          "value": "Guitar Hero III: Legends of Rock"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=tMDFv5m18Pw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Crazy Train"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Ozzy Osbourne"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1980"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Heavy Metal"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Blizzard of Ozz"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Jet Records"
+        },
+        {
+          "key": "songwriter",
+          "points": 1,
+          "value": "Ozzy Osbourne, Randy Rhoads, Bob Daisley"
+        },
+        {
+          "key": "producer",
+          "points": 1,
+          "value": "Max Norman, Ozzy Osbourne, Randy Rhoads"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Grand Theft Auto: Vice City"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kln_bIndDJg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Logical Song"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Supertramp"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1979"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Breakfast in America"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Progressive Pop, Art Rock"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Magnolia (Film)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=B885n08hOmw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Dreamer"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Supertramp"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1974"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Crime of the Century"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Progressive Rock, Art Rock, Pop Rock"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=bZwxTX2pWmw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Another Brick in the Wall, Part 2"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Pink Floyd"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1979"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The Wall"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Progressive Rock"
+        },
+        {
+          "key": "movie/videoGame",
+          "points": 1,
+          "value": "Pink Floyd – The Wall"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-0kcet4aPpQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Money"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Pink Floyd"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The Dark Side of the Moon"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1973"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Progressive Rock"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=XVW5qA7QLmw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Qui De Nous Deux"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "M"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2003"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Pop, Rock"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Qui de nous deux"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BRTDC9Z5UdE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "J't'emmène au vent"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Louise Attaque"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Louise Attaque"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Folk rock"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1997"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Wt6eHMIhVxI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Léa"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Louise Attaque"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1997"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Louise Attaque"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Rock alternatif"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=n5de2XQX358",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "JE VEUX CHANTER"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "CHRISTOPHE MICHEL"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2018"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Je veux chanter"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson Française, Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rjsG_WGzgTA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Christophe Maé - On S'Attache (Clip Officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "CHRISTOPHE MAÉ"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Mon paradis"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Hs6ailybTTE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Belle Demoiselle"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Christophe Maé"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Mon paradis"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Chanson française"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=MYP_4OlwCZY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Double je"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Christophe Willem"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Inventaire"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Sony BMG Music Entertainment"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xICWYCoZ7BQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Rue de la paix"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Zazie"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2001"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "La Zizanie"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=hEfU7s1yAAw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "C'est mon rêve"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Damien Jean"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2013"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "C'est mon rêve"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop, Chanson Française"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=vURYMEBiEdY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Jeune et Con"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Saez"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "J'accuse"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2000"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Rock, Chanson française"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Iwb6u1Jo1Mc",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Respire"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Mickey 3D"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2003"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Le Grand Outside"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=TQV-0fwwCQM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Magic Key"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "One-T + Cool-T"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2001"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electronic, Dance, French House"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The One-T's Album"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=oiKj0Z_Xnjc",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Stromae - papaoutai (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Stromae"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2013"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electronic, Pop, Dance-pop, Synth-pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Racine carrée"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Luc Junior Tam, Xavier Reye"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Mosaert"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=S_xH7noaqTA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Stromae - Formidable (ceci n'est pas une leçon)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Stromae"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QYh6mYIJG2Y",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Ariana Grande - 7 rings (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ArianaGrandeVevo"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SXiSVQZLje8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Ariana Grande ft. Nicki Minaj - Side To Side (Official Video) ft. Nicki Minaj"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ArianaGrandeVevo"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SeIJmciN8mo",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Nicki Minaj - Starships (Explicit) (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "NickiMinajAtVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=5qm8PH4xAss",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "50 Cent - In Da Club (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "50CentVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ztygmWtWCjQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "JAY-Z - Run This Town ft. Rihanna, Kanye West"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "JayZVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8qfM7offtiA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "K.Maro - Femme Like U (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "K Maro Officiel"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Eu-9OhZ8jYM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "PZK - CHUIS BO (Feat. Dogg Soso) (Clip Officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "PZK"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0qeV8PDBH8E",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Renaud - manhattan kaboul"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "RenaudVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ljUtuoFt-8c",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Smells Like Teen Spirit"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Nirvana - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=cuLZs39okbY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Marc Lavoine - Elle a les yeux revolver (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "MarcLavoineVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=K8JWOKc1jSc",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Céline Dion - J'irai où tu iras (ASL Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "CelineDionVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ythzoQih-XU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Koxie - Garçon"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "KoxieVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lSDfCdycdvk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Zombie"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "The Cranberries - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=OjyZKfdwlng",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Warrant - Cherry Pie"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "WarrantVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dDXXM9ytbdQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "L5 - Toutes les femmes de ta vie (Clip Officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "L5"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Efa6BAWPm9o",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Losing My Religion"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "R.E.M. - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=NHpyJ3aOUEU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "US Boy (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Jena Lee"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2009"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Vous remercier"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "R&B"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Iy1gH00vkMw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Gravé dans la roche"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Sniper"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2003"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Gravé dans la roche"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=J0xe5DcnYSA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Holiday / Boulevard of Broken Dreams"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Green Day"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2004"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "American Idiot"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Punk Rock, Alternative Rock"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Reprise Records"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Samuel Bayer"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Tony Hawk's American Wasteland"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=9RfVp-GhKfs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Creep"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Radiohead"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1992"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Pablo Honey"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Alternative Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Brett Turnbull"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Parlophone"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=U5rLz5AZBIA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Way I Are"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Timbaland ft. Keri Hilson, D.O.E., Sebastian"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Shock Value"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "R&B, Hip Hop, Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-cid1qHuy_U",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Chop Suey!"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "System Of A Down"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2001"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Toxicity"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Nu Metal, Alternative Metal"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Marcos Siega"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "American Recordings, Columbia Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=sCz5y84dwuA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "(It Goes Like) Nanana"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Peggy Gou"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2023"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "House, Dance-pop, Balearic Beat"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Single"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "XL Recordings"
+        },
+        {
+          "key": "videoReleaseDate",
+          "points": 1,
+          "value": "July 10, 2023"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-eGM0IJc70Y",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Bring Me To Life"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Evanescence"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2003"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Fallen"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Alternative Metal"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Philipp Stölzl"
+        },
+        {
+          "key": "featuredIn",
+          "points": 1,
+          "value": "Daredevil (movie)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ccSPZZ2AKXY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Partenaire Particulier"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Partenaire Particulier"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1985"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Synth-pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Partenaire Particulier"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=k85mRPqvMbE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Axel F"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Crazy Frog"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2005"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Novelty, Eurodance, Electronic"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Crazy Frog Presents Crazy Hits"
+        },
+        {
+          "key": "originalSong",
+          "points": 1,
+          "value": "Axel F by Harold Faltermeyer"
+        },
+        {
+          "key": "originalMovie",
+          "points": 1,
+          "value": "Beverly Hills Cop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=v0eR5lnYuqU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "On va s'aimer"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Gilbert Montagné"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1983"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop, Disco"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Liberté"
+        },
+        {
+          "key": "usedInMovie",
+          "points": 1,
+          "value": "Camping (2006)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SQA21UbVEx8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Buttons"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "The Pussycat Dolls"
+        },
+        {
+          "key": "featuredArtist",
+          "points": 1,
+          "value": "Snoop Dogg"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "PCD"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2006"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, R&B"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Francis Lawrence"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=F6X5rmLqX9M",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Du ferme"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "La Fouine"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Drôle de parcours"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Hip Hop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rMqayQ-U74s",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Womanizer"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Britney Spears"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Circus"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-pop, Electropop"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2008"
+        },
+        {
+          "key": "musicVideoDirector",
+          "points": 1,
+          "value": "Joseph Kahn"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Jive Records"
+        },
+        {
+          "key": "songLength",
+          "points": 1,
+          "value": "3:43"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rDBck1REfBc",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Don't Cha"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "The Pussycat Dolls featuring Busta Rhymes"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2005"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "PCD"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, R&B, Hip Hop"
+        },
+        {
+          "key": "musicVideoDirector",
+          "points": 1,
+          "value": "Paul Hunter"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=oG-4Uvhm4lI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Poker Face"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Lady Gaga"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The Fame"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2008"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electropop"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Ray Kay"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=nOj6d-HOw2w",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Hips Don't Lie"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Shakira featuring Wyclef Jean"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2006"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Oral Fixation, Vol. 2"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Latin Pop, Pop, Reggaeton"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Sophie Muller"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lAhHNCfA7NI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Alexandra Stan - Mr. Saxobeat"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Alexandra Stan"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2010"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Saxobeats"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Maan Studio"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=M7X6oYg6iro",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "L'Aventurier"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Indochine"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "L'Aventurier"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1982"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "New Wave"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=S-LO6dctBms",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Eye of the Tiger"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Survivor"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1982"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock, Arena Rock, Pop Rock"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Eye of the Tiger"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Rocky III"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ZEMBDKMtHqM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Come As You Are"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Nirvana"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Nevermind"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Grunge, Alternative Rock"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1992"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Kevin Kerslake"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=sLhu070ZwIY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Mourir sur scène"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Dalida"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1983"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Mourir sur scène"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Chanson française, Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=XfbP4NxQBYQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Être à la hauteur (Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Emmanuel Moire"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Le chemin"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop"
+        },
+        {
+          "key": "associatedMusical",
+          "points": 1,
+          "value": "Le Roi Soleil"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HxtfFoFwrmA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Simple Plan - Jet Lag ft. Marie-Mai (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Simple Plan"
+        },
+        {
+          "key": "featuredArtist",
+          "points": 1,
+          "value": "Marie-Mai"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2011"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Get Your Heart On!"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop Punk, Pop Rock"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Atlantic Records, Lava Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Rd0n3ZL6MeA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Macumba"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Jean-Pierre Mader"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1985"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Fais-moi signe"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "French Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=LBr7kECsjcQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Centuries"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Fall Out Boy"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2014"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "American Beauty/American Psycho"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop Rock, Alternative Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Syndrome"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=5_PBNZXlzp0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "All The Small Things"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "blink-182"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1999"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop Punk"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Enema of the State"
+        },
+        {
+          "key": "movie",
+          "points": 1,
+          "value": "Charlie's Angels"
+        },
+        {
+          "key": "videoGame",
+          "points": 1,
+          "value": "Guitar Hero 5"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=YkADj0TPrJA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "In The Air Tonight"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Phil Collins"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1981"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Face Value"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Art Rock, Progressive Pop, Soft Rock"
+        },
+        {
+          "key": "notableUses",
+          "points": 1,
+          "value": "Miami Vice (TV series), The Hangover (film)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Qt2mbGP6vFI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Another Day in Paradise"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Phil Collins"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1989"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Soft Rock, Adult Contemporary"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "...But Seriously"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=35K6vQRt67g",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Jesus He Knows Me"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Genesis"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1992"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "We Can't Dance"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop Rock, Progressive Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Jim Yukich"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=sy1dYFGkPUE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "D.A.N.C.E."
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Justice"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2007"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electro House"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Cross (†)"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Jonas & François"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Ed Banger Records, Because Music"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=V1Pl8CzNzCw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "lovely"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Billie Eilish, Khalid"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2018"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Alternative Pop, Indie Pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "13 Reasons Why: Season 2 (Music from the Original TV Series)"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=k2qgadSvNyU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "New Rules"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Dua Lipa"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2017"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Dance-pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Dua Lipa"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Henry Scholfield"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=JGwWNGJdvx8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Ed Sheeran - Shape of You (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Ed Sheeran"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BQ0mxQXmLsk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Camila Cabello - Havana (Official Video) ft. Young Thug"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "CamilaCabelloVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ILWSp0m9G2U",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Irene Cara  - Flashdance What A Feeling (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "UnidiscMusic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=N4bFqW_eu2I",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Animals - House Of The Rising Sun (Music Video) [4K HD]"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Timeless Music"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=TUVcZfQe-Kw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Dua Lipa - Levitating Featuring DaBaby (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Dua Lipa"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=gDCRrvtY78g",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "U Can't Touch This"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "MC Hammer"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1990"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hip Hop, Pop Rap"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Please Hammer Don't Hurt 'Em"
+        },
+        {
+          "key": "movie/videoGame",
+          "points": 1,
+          "value": "The Addams Family, Grand Theft Auto V, The Lego Movie"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=eVli-tstM5E",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Espresso"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Sabrina Carpenter"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2024"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Short n' Sweet"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Dave Meyers"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Island Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4mNDYWhRSaw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Ça m'énerve"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Helmut Fritz"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2009"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "En plein délire"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electro House"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=EVBsypHzF3U",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Lady Gaga - Telephone ft. Beyoncé (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Lady Gaga ft. Beyoncé"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2010"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The Fame Monster"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-Pop, Electropop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=iP6XpLQM2Cs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "TiK ToK (Official HD Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Ke$ha"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Animal"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Electropop, Dance-pop"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2009"
+        },
+        {
+          "key": "musicVideoDirector",
+          "points": 1,
+          "value": "Syndrome"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "RCA Records, Kemosabe Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=3gOHvDP_vCs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Justin Timberlake - SexyBack (Official Video) ft. Timbaland"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Justin Timberlake"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2006"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Dance-pop, R&B, Electro-funk"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "FutureSex/LoveSounds"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Michael Haussman"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Jive Records"
+        },
+        {
+          "key": "featuredArtists",
+          "points": 1,
+          "value": "Timbaland"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=NNiTxUEnmKI",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Final Countdown"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Europe"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1986"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "The Final Countdown"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Hard Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Nick Morris"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Epic Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=gvLMhpzYic0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Girls Just Want to Have Fun"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Cyndi Lauper"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1983"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, New Wave"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "She's So Unusual"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Edd Griles"
+        },
+        {
+          "key": "awards",
+          "points": 1,
+          "value": "MTV Video Music Award for Best Female Video"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=gl1aHhXnN1k",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Ariana Grande - thank u, next (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Ariana Grande"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2018"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "thank u, next"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Hannah Lux Davis"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Republic Records"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=yebNIHKAC4A",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Golden"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Harry Styles"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2020"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Fine Line"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Ben Turner, Gabe Turner"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Columbia Records"
+        },
+        {
+          "key": "musicVideoReleaseDate",
+          "points": 1,
+          "value": "October 26, 2020"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=UKAoQUEO5-8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Lady Melody"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Tom Frager"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2009"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Better Days"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Reggae, Pop, French Pop"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QAo_Ycocl1E",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Africa"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Toto"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1982"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Toto IV"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Soft Rock"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Steve Barron"
+        },
+        {
+          "key": "label",
+          "points": 1,
+          "value": "Columbia"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lYBUbBu4W08",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Never Gonna Give You Up"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Rick Astley"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "1987"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Pop, Dance-Pop, Synth-pop"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Whenever You Need Somebody"
+        },
+        {
+          "key": "director",
+          "points": 1,
+          "value": "Simon West"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0jgrCKhxE1s",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Through the Fire and Flames"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "DragonForce"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2006"
+        },
+        {
+          "key": "album",
+          "points": 1,
+          "value": "Inhuman Rampage"
+        },
+        {
+          "key": "genre",
+          "points": 1,
+          "value": "Power Metal, Speed Metal"
+        },
+        {
+          "key": "usedIn",
+          "points": 1,
+          "value": "Guitar Hero III: Legends of Rock, Brutal Legend, Rocksmith 2014"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=cn05UMpoXvA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Gérald De Palmas - Une seule vie"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "GeralddePalmasVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=d8ekz_CSBVg",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Three Days Grace - I Hate Everything About You (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ThreeDaysGraceVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=89dGC8de0CA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Aerosmith - Dream On (Audio)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "AerosmithVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=aU_TQcyGkvY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Kyo - Dernière danse (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "KyoVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8yvGCAvOAfM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Thirty Seconds To Mars - The Kill (Bury Me)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "ThirtySecondsToMarsVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lyuFLU2Zqz0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Dschinghis Khan - Moskau (Starparade 14.06.1979)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "DschinghisKhanVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Y99UqvgCmE8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Yelle - Je Veux Te Voir"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "100% Chanson Française"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=tOqmrNvfoHk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Easy Lover"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Philip Bailey - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=hfmxO-HQ5rU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Down Under"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Men at Work - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=i5_asj1BGFs",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Sweet Dreams (Are Made of This)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Eurythmics - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=c18441Eh_WE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Kylie Minogue - Can't Get You Out Of My Head (Official Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Kylie Minogue"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fWNaR-rxAic",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Carly Rae Jepsen - Call Me Maybe"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "CarlyRaeJepsenVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=B2mmDEv0OEk",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "September"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Earth, Wind & Fire - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SRcnnId15BA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "50 Cent - Candy Shop (Official Music Video) ft. Olivia"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "50CentVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=MzvlalfN0Es",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Francis Cabrel - Je l'aime à mourir (Lyrics vidéo officielle)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "franciscabrelVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_u0zg4p9cV4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Careless Whisper"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "George Michael - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=UR1GZrzizXM",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Renan Luce - La Lettre"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "RenanLuceVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HvropLxYb5c",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Footloose (From \"Footloose\" Soundtrack)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Kenny Loggins - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=NiHWwKC8WjU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "MIKA - Elle Me Dit (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Universal Music France"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=W1hn1pF-ilQ",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Doors - Riders On The Storm (Official Music Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "The Doors"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4Oc7r_SyLg8",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Bea Miller -  Playground (Testing)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Eternity Music"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=AWqkoj9MPMY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "qui a le droit PATRICK BRUEL"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Assy"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4ujBQOzs6Lw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Rolling in the Deep"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Adele - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4jA-_g_iSY0",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "I Want to Know What Love Is (1999 Remaster)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Foreigner - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2p_AxoaHeRw",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Gilbert Montagné - Les sunlights des tropiques (Official Lyric Video)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "GilbertMontagneVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kmioyMNkgx4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Party Rock Anthem"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "LMFAO - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qQ0zxuWFxrY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "The Reason"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "Hoobastank - Topic"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=PhhlsC1q4TU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "Larusso - Tu m'oublieras (Clip officiel)"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "100% Chanson Française"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=eXvBjCO19QY",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "point_fields": [
+        {
+          "key": "title",
+          "points": 1,
+          "value": "2Pac - Changes ft. Talent"
+        },
+        {
+          "key": "artist",
+          "points": 1,
+          "value": "2PacVEVO"
+        },
+        {
+          "key": "releaseYear",
+          "points": 1,
+          "value": "2025"
+        }
+      ],
+      "bonus_fields": []
+    }
+  ]
+}

@@ -11,8 +11,8 @@ import TeamPairingModal from "./TeamPairingModal";
 import type { TeamPayload } from "../Context/ApiContext";
 
 function GameController() {
-  const { game, resetFoundFields, resetWholeGame, canPairTeams, canStartGame, canResumeGame, canPauseGame, canRevealSong, canGoNextSong, canStopGame, canEndGame, isGameRunning } = useNeonBeatGame();
-  const { startAutoPairingTeam, startGame, resumeGame, pauseGame, revealSong, nextSong, stopGame, endGame, putTeam } = useApiContext();
+  const { game, question, answersFound, markAnswerFound, resetFoundAnswers, resetWholeGame, canPairTeams, canStartGame, canResumeGame, canPauseGame, canRevealQuestion, canGoNextQuestion, canStopGame, canEndGame, isGameRunning } = useNeonBeatGame();
+  const { startAutoPairingTeam, startGame, resumeGame, pauseGame, revealQuestion, nextQuestion, stopGame, endGame, putTeam } = useApiContext();
 
   const [isTeamPairingModalOpen, setIsTeamPairingModalOpen] = useState<boolean>(false);
 
@@ -52,24 +52,33 @@ function GameController() {
     }
   };
 
-  const handleRevealSong = async () => {
+  const handleRevealQuestion = async () => {
     try {
-      await revealSong();
-      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Song reveal successfully');
+      await revealQuestion();
+      // For open/multiple_choice questions, automatically reveal all answers
+      if (question && (question.type === 'open' || question.type === 'multiple_choice')) {
+        for (const [idStr] of Object.entries(question.answers)) {
+          const answerId = parseInt(idStr, 10);
+          if (!answersFound.includes(answerId)) {
+            await markAnswerFound(question.id, answerId);
+          }
+        }
+      }
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Question revealed successfully');
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to reveal song';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error revealing song: ${message}`);
+      const message = error instanceof Error ? error.message : 'Failed to reveal question';
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error revealing question: ${message}`);
     }
   };
 
-  const handleNextSong = async () => {
+  const handleNextQuestion = async () => {
     try {
-      await nextSong();
-      resetFoundFields();
-      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Moved to next song');
+      await nextQuestion();
+      resetFoundAnswers();
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Moved to next question');
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to move to next song';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error moving to next song: ${message}`);
+      const message = error instanceof Error ? error.message : 'Failed to move to next question';
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error moving to next question: ${message}`);
     }
   };
 
@@ -115,8 +124,8 @@ function GameController() {
           : <Button type="primary" icon={<FaPlay />} onClick={handleStartGame} disabled={!canStartGame()} />
         }
         <Button type="primary" icon={<FaPause />} onClick={handlePauseGame} disabled={!canPauseGame()} />
-        <Button type="primary" icon={<FaEye />} onClick={handleRevealSong} disabled={!canRevealSong()} />
-        <Button type="primary" icon={<FaStepForward />} onClick={handleNextSong} disabled={!canGoNextSong()} />
+        <Button type="primary" icon={<FaEye />} onClick={handleRevealQuestion} disabled={!canRevealQuestion()} />
+        <Button type="primary" icon={<FaStepForward />} onClick={handleNextQuestion} disabled={!canGoNextQuestion()} />
         <Button type="primary" icon={<GiFinishLine />} onClick={handleStopGame} disabled={!canStopGame()} />
         <Popconfirm
           title="Are you sure to end the game?"

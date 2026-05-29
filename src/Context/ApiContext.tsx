@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
 import type { ReactNode } from "react";
 import MessageContext from "./MessageContext";
-import type { Game, Team, Playlist, Song } from "../Hooks/useNeonBeatGame";
+import type { Game, Team, Question, QuestionsSequenceListItem } from "../Hooks/useNeonBeatGame";
 
 interface ApiContextType {
   sse: EventSource | undefined;
-  getSong: () => Promise<{ song: Song, found_point_fields: string[], found_bonus_fields: string[] }>;
+  getQuestion: () => Promise<{ question: Question; answers_ids: number[]; hints_ids: number[] }>;
   getGames: () => Promise<Game[]>;
   getGame: (gameId: string) => Promise<Game>;
   postGame: (payload: GamePayload, shuffle: boolean) => Promise<Game>;
@@ -14,36 +14,40 @@ interface ApiContextType {
   stopGame: () => Promise<void>;
   endGame: () => Promise<void>;
   pauseGame: () => Promise<void>;
-  revealSong: () => Promise<void>;
-  postRevealField: (payload: FieldRevealPayload) => Promise<{ song_id: number, point_fields: string[], bonus_fields: string[] }>;
+  revealQuestion: () => Promise<void>;
+  postAnswerFound: (payload: AnswerFoundPayload) => Promise<{ question_id: number; answers_ids: number[] }>;
+  postHint: (payload: QuestionHintPayload) => Promise<{ question_id: number; hints_ids: number[] }>;
   resumeGame: () => Promise<void>;
-  nextSong: () => Promise<void>;
+  nextQuestion: () => Promise<void>;
   putTeam: (payload: TeamPayload) => Promise<void>;
   deleteGame: (gameId: string) => Promise<void>;
-  validateAnswer: (payload: { valid: string; }) => Promise<void>;
+  submitValidation: (payload: QuestionValidationPayload) => Promise<void>;
   getCurrentPhase: () => Promise<PhasePayload>;
-  getPlaylists: () => Promise<Playlist[]>;
-  postPlaylist: (payload: Playlist) => Promise<void>;
+  getQuestionsSequences: () => Promise<QuestionsSequenceListItem[]>;
+  postQuestionsSequence: (payload: { name: string; questions: unknown[] }) => Promise<void>;
   getTeams: () => Promise<Team[]>;
   postTeam: (payload: { name: string; buzzer_id?: string; score: number }) => Promise<void>;
   deleteTeam: (teamId: string) => Promise<void>;
   startAutoPairingTeam: (teamId: string) => Promise<void>;
-  postScore: (buzzer_id: string, points: number) => Promise<void>;
+  postScore: (team_id: string, points: number) => Promise<void>;
   isServerReady: boolean | null;
   apiBaseUrl: string;
   adminToken: string | null;
 }
 
 export interface GamePayload {
-  name: string,
-  teams: Team[],
-  playlist_id: string;
+  name: string;
+  teams: Team[];
+  questions_sequence_id: string;
 }
 
 export interface PhasePayload {
   phase: string;
   degraded: boolean;
   game_id: string | null;
+  question?: Question;
+  answers_ids?: number[];
+  hints_ids?: number[];
 }
 
 export interface TeamPayload {
@@ -53,10 +57,19 @@ export interface TeamPayload {
   score: number;
 }
 
-export interface FieldRevealPayload {
-  field_key: string;
-  kind: string;
-  song_id: number;
+export interface AnswerFoundPayload {
+  question_id: number;
+  answer_id: number;
+}
+
+export interface QuestionValidationPayload {
+  question_id: number;
+  valid: string;
+}
+
+export interface QuestionHintPayload {
+  question_id: number;
+  hint_id: number;
 }
 
 const ApiContext = createContext<ApiContextType | null>(null);
@@ -142,10 +155,10 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [setAdminToken, messageApi]);
 
-  const getSong = useCallback(async (): Promise<{ song: Song, found_point_fields: string[], found_bonus_fields: string[] }> => {
-    const response = await fetch(`${apiBaseUrl}/public/song`);
+  const getQuestion = useCallback(async (): Promise<{ question: Question; answers_ids: number[]; hints_ids: number[] }> => {
+    const response = await fetch(`${apiBaseUrl}/public/question`);
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to fetch song');
+      const errorMessage = await getErrorMessage(response, 'Failed to fetch question');
       throw new Error(errorMessage);
     }
     return response.json();
@@ -189,19 +202,19 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     return data;
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const getPlaylists = useCallback(async (): Promise<Playlist[]> => {
-    const response = await fetch(`${apiBaseUrl}/admin/playlists`, {
+  const getQuestionsSequences = useCallback(async (): Promise<QuestionsSequenceListItem[]> => {
+    const response = await fetch(`${apiBaseUrl}/admin/questions-sequence`, {
       headers: getAdminHeaders(),
     });
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to fetch playlists');
+      const errorMessage = await getErrorMessage(response, 'Failed to fetch questions sequences');
       throw new Error(errorMessage);
     }
     return response.json();
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const postPlaylist = useCallback(async (payload: Playlist): Promise<void> => {
-    const response = await fetch(`${apiBaseUrl}/admin/playlists`, {
+  const postQuestionsSequence = useCallback(async (payload: { name: string; questions: unknown[] }): Promise<void> => {
+    const response = await fetch(`${apiBaseUrl}/admin/questions-sequence`, {
       method: 'POST',
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
@@ -209,7 +222,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to import playlist');
+      const errorMessage = await getErrorMessage(response, 'Failed to import questions sequence');
       throw new Error(errorMessage);
     }
   }, [apiBaseUrl, getAdminHeaders]);
@@ -307,19 +320,19 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const revealSong = useCallback(async (): Promise<void> => {
+  const revealQuestion = useCallback(async (): Promise<void> => {
     const response = await fetch(`${apiBaseUrl}/admin/game/reveal`, {
       method: 'POST',
       headers: getAdminHeaders(),
     });
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to reveal song');
+      const errorMessage = await getErrorMessage(response, 'Failed to reveal question');
       throw new Error(errorMessage);
     }
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const postRevealField = useCallback(async (payload: FieldRevealPayload): Promise<{ song_id: number, point_fields: string[], bonus_fields: string[] }> => {
-    const response = await fetch(`${apiBaseUrl}/admin/game/fields/found`, {
+  const postAnswerFound = useCallback(async (payload: AnswerFoundPayload): Promise<{ question_id: number; answers_ids: number[] }> => {
+    const response = await fetch(`${apiBaseUrl}/admin/game/question/answer-found`, {
       method: 'POST',
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
@@ -327,7 +340,22 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to reveal field');
+      const errorMessage = await getErrorMessage(response, 'Failed to mark answer found');
+      throw new Error(errorMessage);
+    }
+    return response.json();
+  }, [apiBaseUrl, getAdminHeaders]);
+
+  const postHint = useCallback(async (payload: QuestionHintPayload): Promise<{ question_id: number; hints_ids: number[] }> => {
+    const response = await fetch(`${apiBaseUrl}/admin/game/question/hint`, {
+      method: 'POST',
+      headers: getAdminHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      const errorMessage = await getErrorMessage(response, 'Failed to reveal hint');
       throw new Error(errorMessage);
     }
     return response.json();
@@ -344,13 +372,13 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const nextSong = useCallback(async (): Promise<void> => {
+  const nextQuestion = useCallback(async (): Promise<void> => {
     const response = await fetch(`${apiBaseUrl}/admin/game/next`, {
       method: 'POST',
       headers: getAdminHeaders(),
     });
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to skip to next song');
+      const errorMessage = await getErrorMessage(response, 'Failed to skip to next question');
       throw new Error(errorMessage);
     }
   }, [apiBaseUrl, getAdminHeaders]);
@@ -417,8 +445,8 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     }
   }, [apiBaseUrl, getAdminHeaders]);
 
-  const validateAnswer = useCallback(async (payload: { valid: string; }) => {
-    const response = await fetch(`${apiBaseUrl}/admin/game/answer`, {
+  const submitValidation = useCallback(async (payload: QuestionValidationPayload): Promise<void> => {
+    const response = await fetch(`${apiBaseUrl}/admin/game/question/submit-validation`, {
       method: 'POST',
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
@@ -426,7 +454,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
-      const errorMessage = await getErrorMessage(response, 'Failed to validate answer');
+      const errorMessage = await getErrorMessage(response, 'Failed to submit validation');
       throw new Error(errorMessage);
     }
   }, [apiBaseUrl, getAdminHeaders]);
@@ -463,15 +491,15 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     adminToken,
 
     // Getters
-    getSong,
+    getQuestion,
     getGames,
-    getPlaylists,
+    getQuestionsSequences,
     getGame,
     getTeams,
     getCurrentPhase,
 
-    // Postters
-    postPlaylist,
+    // Mutations
+    postQuestionsSequence,
     postTeam,
     postScore,
 
@@ -482,15 +510,16 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     stopGame,
     endGame,
     pauseGame,
-    revealSong,
-    postRevealField,
+    revealQuestion,
+    postAnswerFound,
+    postHint,
     resumeGame,
-    nextSong,
+    nextQuestion,
     startAutoPairingTeam,
     putTeam,
     deleteTeam,
     deleteGame,
-    validateAnswer,
+    submitValidation,
   };
 
   return (

@@ -11,8 +11,8 @@ import TeamsController from "./TeamsController";
 import BuzzController from "./BuzzController";
 
 function AdminHome() {
-  const { song, game, games, gameState, teams,
-    importPlaylist, createGameWithPlaylist,
+  const { question, game, games, gameState, teams,
+    importQuestionsSequence, createGame,
     showGameList, teamIdBuzzing,
   } = useNeonBeatGame();
 
@@ -20,14 +20,16 @@ function AdminHome() {
 
   const currentTeamBuzzing = teams?.find((team) => team.id === teamIdBuzzing);
 
-  // Extract YouTube video ID from URL
+  // Extract YouTube video ID from URL (only relevant for blind_test questions)
   const getYouTubeVideoId = (url: string): string | null => {
     const regex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
     const match = url.match(regex);
     return match ? match[1] : null;
   };
 
-  const youtubeVideoId = song?.url ? getYouTubeVideoId(song.url) : null;
+  const youtubeVideoId = (question?.type === 'blind_test' && question.url)
+    ? getYouTubeVideoId(question.url)
+    : null;
 
   return (
     <Card
@@ -53,12 +55,12 @@ function AdminHome() {
                   }
                   <Flex vertical gap="small">
                     <Button type="primary" className="grow-1" onClick={() => setIsCreatingGame(true)}>New game</Button>
-                    <ImportPlaylist onImport={importPlaylist} />
+                    <ImportPlaylist onImport={importQuestionsSequence} />
                   </Flex>
                 </> :
                   <GameCreator
                     onCreateGame={async (payload, shuffle) => {
-                      await createGameWithPlaylist(payload, shuffle);
+                      await createGame(payload, shuffle);
                       setIsCreatingGame(false);
                     }}
                     onCancel={() => setIsCreatingGame(false)}
@@ -67,13 +69,13 @@ function AdminHome() {
               </Flex>
             </>
           )}
-          {song?.id && <SongController />}
-          {song?.id && youtubeVideoId && (
+          {question && <SongController />}
+          {youtubeVideoId && (
             <Collapse
               size="small"
               items={[{
                 key: 'youtube-preview',
-                label: 'Preview Current Song',
+                label: 'Preview Current Question',
                 children: (
                   <div style={{ textAlign: 'center' }}>
                     <iframe

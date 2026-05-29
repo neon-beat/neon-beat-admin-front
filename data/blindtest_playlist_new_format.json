@@ -1,0 +1,231 @@
+{
+  "name": "Full playlist",
+  "questions": [
+    {
+      "type": "blind_test",
+      "url": "https://www.youtube.com/watch?v=LOZuxwVk7TU",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "answers": [
+        {
+          "key": "title",
+          "value": "Toxic",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "artist",
+          "value": "Britney Spears",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "releaseYear",
+          "value": "2004",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "genre",
+          "value": "Dance-Pop, Pop",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "album",
+          "value": "In the Zone",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "director",
+          "value": "Joseph Kahn",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "label",
+          "value": "Jive Records",
+          "points": 1,
+          "is_bonus": false
+        }
+      ]
+    },
+    {
+      "type": "blind_test",
+      "url": "https://www.youtube.com/watch?v=2JYUfiqUk14",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "answers": [
+        {
+          "key": "title",
+          "value": "Dis-moi oui (Marina)",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "artist",
+          "value": "Keen'V",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "releaseYear",
+          "value": "2014",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "album",
+          "value": "Saltimbanque",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "genre",
+          "value": "Pop, Dance-pop, French Pop",
+          "points": 1,
+          "is_bonus": false
+        }
+      ]
+    },
+    {
+      "type": "blind_test",
+      "url": "https://www.youtube.com/watch?v=MFhKnRLEihE",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "answers": [
+        {
+          "key": "title",
+          "value": "Calogero - Face à la mer (Clip officiel) ft. Passi",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "artist",
+          "value": "CalogeroVEVO",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "releaseYear",
+          "value": "2025",
+          "points": 1,
+          "is_bonus": false
+        }
+      ]
+    },
+    {
+      "type": "blind_test",
+      "url": "https://www.youtube.com/watch?v=pAgnJDJN4VA",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "answers": [
+        {
+          "key": "title",
+          "value": "Back In Black",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "artist",
+          "value": "AC/DC",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "releaseYear",
+          "value": "1980",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "album",
+          "value": "Back In Black",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "genre",
+          "value": "Hard Rock",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "director",
+          "value": "Eric Dionysian, Eric Liebowitz",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "label",
+          "value": "Atlantic Records",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "producer",
+          "value": "Robert John \"Mutt\" Lange",
+          "points": 1,
+          "is_bonus": false
+        }
+      ]
+    },
+    {
+      "type": "blind_test",
+      "url": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
+      "starts_at_ms": 0,
+      "guess_duration_ms": 30000,
+      "answers": [
+        {
+          "key": "title",
+          "value": "Guns N' Roses - Sweet Child o' Mine (Official Music Video)",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "artist",
+          "value": "Guns N' Roses",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "channel",
+          "value": "GunsNRosesVEVO",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "releaseYear",
+          "value": "1988",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "album",
+          "value": "Appetite for Destruction",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "genre",
+          "value": "Hard Rock",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "director",
+          "value": "Nigel Dick",
+          "points": 1,
+          "is_bonus": false
+        },
+        {
+          "key": "label",
+          "value": "Geffen Records",
+          "points": 1,
+          "is_bonus": false
+        }
+      ]
+    }
+  ]
+}

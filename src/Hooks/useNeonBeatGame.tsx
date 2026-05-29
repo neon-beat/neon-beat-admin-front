@@ -1,11 +1,18 @@
 import { useGameManagement } from "./useGameManagement";
 
-// Re-export interfaces for backward compatibility
+// Re-export types for external use
 export type {
-  Field,
-  Song,
+  BlindTestAnswer,
+  MultipleChoiceAnswer,
+  OpenAnswer,
+  Hint,
+  BlindTestQuestion,
+  MultipleChoiceQuestion,
+  OpenQuestion,
+  Question,
+  QuestionsSequenceListItem,
+  QuestionsSequence,
   Game,
-  Playlist,
   Team,
   Buzzer,
 } from "../Context/GameManagementContext";

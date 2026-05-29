@@ -2,39 +2,76 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 import type { ReactNode } from "react";
 import MessageContext from "./MessageContext";
 import { useApiContext } from "../Hooks/useApiContext";
-import type { FieldRevealPayload, GamePayload } from "./ApiContext";
+import type { AnswerFoundPayload, GamePayload } from "./ApiContext";
 
-// Re-export interfaces for external use
-export interface Field {
+export interface BlindTestAnswer {
   key: string;
-  points: number;
   value: string;
+  points: number;
+  is_bonus: boolean;
 }
 
-export interface Song {
-  id: string;
-  bonus_fields: Field[];
-  guess_duration_ms: number;
-  point_fields: Field[];
+export interface MultipleChoiceAnswer {
+  text: string;
+  is_correct: boolean;
+}
+
+export interface OpenAnswer {
+  text: string;
+}
+
+export interface Hint {
+  text: string;
+}
+
+export interface BlindTestQuestion {
+  type: 'blind_test';
+  id: number;
   starts_at_ms: number;
+  guess_duration_ms: number;
   url: string;
+  answers: Record<string, BlindTestAnswer>;
+}
+
+export interface MultipleChoiceQuestion {
+  type: 'multiple_choice';
+  id: number;
+  guess_duration_ms: number;
+  prompt: string;
+  url?: string;
+  answers: Record<string, MultipleChoiceAnswer>;
+  hints: Record<string, Hint>;
+}
+
+export interface OpenQuestion {
+  type: 'open';
+  id: number;
+  guess_duration_ms: number;
+  prompt: string;
+  url?: string;
+  answers: Record<string, OpenAnswer>;
+  hints: Record<string, Hint>;
+}
+
+export type Question = BlindTestQuestion | MultipleChoiceQuestion | OpenQuestion;
+
+export interface QuestionsSequenceListItem {
+  id: string;
+  name: string;
+}
+
+export interface QuestionsSequence extends QuestionsSequenceListItem {
+  questions?: Question[];
 }
 
 export interface Game {
   id: string;
   name: string;
-  playlist: Playlist;
+  questions_sequence: QuestionsSequenceListItem;
   teams?: Team[];
-  status?: string;
   created_at?: string;
   updated_at?: string;
-  current_song_index: number;
-}
-
-export interface Playlist {
-  id: string;
-  name: string;
-  songs: Song[];
+  current_question_index?: number;
 }
 
 export interface Team {
@@ -63,41 +100,41 @@ export type GameState = typeof GameState[keyof typeof GameState];
 interface GameManagementContextType {
   // State
   games: Game[];
-  playlists: Playlist[];
+  questionsSequences: QuestionsSequenceListItem[];
   teams: Team[] | undefined;
   currentTeamPairing: Team | undefined;
   game: Game | undefined;
-  song: Song | undefined;
+  question: Question | undefined;
   buzzers: Buzzer[];
   gameState: GameState | undefined;
   setGame: React.Dispatch<React.SetStateAction<Game | undefined>>;
   setTeams: React.Dispatch<React.SetStateAction<Team[] | undefined>>;
-  pointFieldsFound: string[];
-  bonusFieldsFound: string[];
+  answersFound: number[];
+  hintsFound: number[];
   teamIdBuzzing: string | undefined;
 
   // Actions
   loadSelectedGame: (gameId: string) => Promise<void>;
   loadGames: () => Promise<void>;
-  loadPlaylists: () => Promise<void>;
+  loadQuestionsSequences: () => Promise<void>;
   loadTeams: () => Promise<void>;
-  importPlaylist: (payload: Playlist) => Promise<void>;
-  createGameWithPlaylist: (payload: GamePayload, shuffle: boolean) => Promise<void>;
+  importQuestionsSequence: (payload: { name: string; questions: unknown[] }) => Promise<void>;
+  createGame: (payload: GamePayload, shuffle: boolean) => Promise<void>;
   createTeamWithoutBuzzer: (name: string) => Promise<void>;
-  revealField: (field: Field, kind: string) => Promise<void>;
+  markAnswerFound: (questionId: number, answerId: number) => Promise<void>;
   grantTeamPoints: (team: Team, points: number) => Promise<void>;
-  resetFoundFields: () => void;
+  resetFoundAnswers: () => void;
   resetWholeGame: () => void;
   setTeamIdBuzzing: React.Dispatch<React.SetStateAction<string | undefined>>;
 
-  // Tests
+  // Guards
   canPairTeams: () => boolean;
   canDeleteTeam: () => boolean;
   canStartGame: () => boolean;
   canResumeGame: () => boolean;
   canPauseGame: () => boolean;
-  canRevealSong: () => boolean;
-  canGoNextSong: () => boolean;
+  canRevealQuestion: () => boolean;
+  canGoNextQuestion: () => boolean;
   canStopGame: () => boolean;
   canEndGame: () => boolean;
   canDeleteGame: () => boolean;
@@ -118,22 +155,22 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
   }
   const { messageApi } = messageContext;
 
-  const { sse, getSong, getGames, getGame, postGame, loadGame,
-    getCurrentPhase, getPlaylists, postPlaylist, postRevealField,
+  const { sse, getQuestion, getGames, getGame, postGame, loadGame,
+    getCurrentPhase, getQuestionsSequences, postQuestionsSequence, postAnswerFound,
     getTeams, postTeam, isServerReady, postScore,
   } = useApiContext();
 
   // State
   const [games, setGames] = useState<Game[]>([]);
-  const [playlists, setPlaylists] = useState<Playlist[]>([]);
+  const [questionsSequences, setQuestionsSequences] = useState<QuestionsSequenceListItem[]>([]);
   const [teams, setTeams] = useState<Team[] | undefined>(undefined);
   const [currentTeamPairing, setCurrentTeamPairing] = useState<Team | undefined>();
   const [game, setGame] = useState<Game | undefined>();
-  const [song, setSong] = useState<Song | undefined>();
+  const [question, setQuestion] = useState<Question | undefined>();
   const [buzzers] = useState<Buzzer[]>([]);
   const [gameState, setGameState] = useState<GameState | undefined>();
-  const [pointFieldsFound, setPointFieldsFound] = useState<string[]>([]);
-  const [bonusFieldsFound, setBonusFieldsFound] = useState<string[]>([]);
+  const [answersFound, setAnswersFound] = useState<number[]>([]);
+  const [hintsFound, setHintsFound] = useState<number[]>([]);
   const [teamIdBuzzing, setTeamIdBuzzing] = useState<string | undefined>();
 
   // Actions
@@ -157,23 +194,23 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     }
   }, [getGames, messageApi]);
 
-  const loadPlaylists = useCallback(async () => {
+  const loadQuestionsSequences = useCallback(async () => {
     try {
-      const data = await getPlaylists();
-      setPlaylists(data);
+      const data = await getQuestionsSequences();
+      setQuestionsSequences(data);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error occurred';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error fetching playlists: ${message}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error fetching questions sequences: ${message}`);
     }
-  }, [getPlaylists, messageApi]);
+  }, [getQuestionsSequences, messageApi]);
 
-  const importPlaylist = useCallback(async (payload: Playlist) => {
-    await postPlaylist(payload);
-    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Playlist imported successfully');
-    loadPlaylists();
-  }, [postPlaylist, messageApi, loadPlaylists]);
+  const importQuestionsSequence = useCallback(async (payload: { name: string; questions: unknown[] }) => {
+    await postQuestionsSequence(payload);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Questions sequence imported successfully');
+    loadQuestionsSequences();
+  }, [postQuestionsSequence, messageApi, loadQuestionsSequences]);
 
-  const createGameWithPlaylist = useCallback(async (payload: GamePayload, shuffle: boolean) => {
+  const createGame = useCallback(async (payload: GamePayload, shuffle: boolean) => {
     const newGame = await postGame(payload, shuffle);
     setGame(newGame);
     if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Game created successfully');
@@ -203,30 +240,21 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     }
   }, [loadGame, messageApi, loadTeams]);
 
-  const revealField = useCallback(async (field: Field, kind: string) => {
+  const markAnswerFound = useCallback(async (questionId: number, answerId: number) => {
     try {
-      if (!song) {
-        if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('No song is currently active');
+      if (!question) {
+        if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error('No question is currently active');
         return;
       }
-      const payload: FieldRevealPayload = {
-        field_key: field.key,
-        kind,
-        song_id: parseInt(song.id, 10),
-      }
-      const data = await postRevealField(payload);
-      if (data.point_fields) {
-        setPointFieldsFound(data.point_fields);
-      }
-      if (data.bonus_fields) {
-        setBonusFieldsFound(data.bonus_fields);
-      }
-      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success(`Field ${field.key} revealed successfully`);
+      const payload: AnswerFoundPayload = { question_id: questionId, answer_id: answerId };
+      const data = await postAnswerFound(payload);
+      if (data.answers_ids) setAnswersFound(data.answers_ids);
+      if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Answer marked as found');
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to reveal field';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error revealing field: ${message}`);
+      const message = error instanceof Error ? error.message : 'Failed to mark answer found';
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error marking answer found: ${message}`);
     }
-  }, [postRevealField, messageApi, song]);
+  }, [postAnswerFound, messageApi, question]);
 
   const grantTeamPoints = useCallback(async (team: Team, points: number) => {
     try {
@@ -241,19 +269,19 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       const message = error instanceof Error ? error.message : 'Failed to grant points to team';
       if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error granting points: ${message}`);
     }
-  }, [postTeam, messageApi, loadTeams]);
+  }, [postScore, messageApi, loadTeams]);
 
-  const resetFoundFields = useCallback(() => {
-    setPointFieldsFound([]);
-    setBonusFieldsFound([]);
+  const resetFoundAnswers = useCallback(() => {
+    setAnswersFound([]);
+    setHintsFound([]);
   }, []);
 
   const resetWholeGame = useCallback(() => {
     setGame(undefined);
     setTeams(undefined);
-    setSong(undefined);
-    setPointFieldsFound([]);
-    setBonusFieldsFound([]);
+    setQuestion(undefined);
+    setAnswersFound([]);
+    setHintsFound([]);
     setGameState(GameState.IDLE);
   }, []);
 
@@ -285,10 +313,17 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     const { phase } = data;
     setGameState(phase as GameState);
     if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.info(`Game phase changed to: ${phase}`);
-    if (data.song) {
-      setSong(data.song as Song);
-      if (data.found_point_fields) setPointFieldsFound(data.found_point_fields);
-      if (data.found_bonus_fields) setBonusFieldsFound(data.found_bonus_fields);
+    if (data.question) {
+      setQuestion(data.question as Question);
+      setAnswersFound(data.answers_ids ?? []);
+      setHintsFound(data.hints_ids ?? []);
+    } else if (phase !== GameState.PAUSED) {
+      // When buzzing pauses the game the back-end omits the question from the
+      // snapshot, so preserve the current question so BuzzController can still
+      // submit the validation with the correct question_id.
+      setQuestion(undefined);
+      setAnswersFound([]);
+      setHintsFound([]);
     }
     if (data.phase === GameState.PAUSED && data.paused_buzzer) {
       const team = teams?.find(t => t.buzzer_id === data.paused_buzzer);
@@ -297,6 +332,16 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       }
     }
   }, [messageApi, teams]);
+
+  const onAnswersFound = useCallback((event: MessageEvent) => {
+    const data = JSON.parse(event.data);
+    if (data.answers_ids) setAnswersFound(data.answers_ids);
+  }, []);
+
+  const onHintsRevealed = useCallback((event: MessageEvent) => {
+    const data = JSON.parse(event.data);
+    if (data.hints_ids) setHintsFound(data.hints_ids);
+  }, []);
 
   const onTeamCreated = useCallback((event: MessageEvent) => {
     const data = JSON.parse(event.data);
@@ -342,13 +387,13 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     return false;
   }, [gameState]);
 
-  const canRevealSong = useCallback((): boolean => {
+  const canRevealQuestion = useCallback((): boolean => {
     if (!gameState) return false;
     if (gameState === GameState.PLAYING) return true;
     return false;
   }, [gameState]);
 
-  const canGoNextSong = useCallback((): boolean => {
+  const canGoNextQuestion = useCallback((): boolean => {
     if (!gameState) return false;
     if (gameState === GameState.REVEAL) return true;
     return false;
@@ -395,15 +440,13 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
   useEffect(() => {
     if (isServerReady) {
       loadGames();
-      loadPlaylists();
+      loadQuestionsSequences();
       getCurrentPhase().then(phaseData => {
         setGameState(phaseData.phase as GameState);
-        if (phaseData.phase === GameState.PLAYING) {
-          getSong().then((songData) => {
-            setSong(songData.song);
-            setPointFieldsFound(songData.found_point_fields);
-            setBonusFieldsFound(songData.found_bonus_fields);
-          });
+        if (phaseData.question) {
+          setQuestion(phaseData.question);
+          setAnswersFound(phaseData.answers_ids ?? []);
+          setHintsFound(phaseData.hints_ids ?? []);
         }
         if (phaseData.game_id) {
           getGame(phaseData.game_id).then((gameData) => {
@@ -412,7 +455,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
         }
       });
     }
-  }, [isServerReady, loadGames, loadPlaylists]);
+  }, [isServerReady, loadGames, loadQuestionsSequences]);
 
   useEffect(() => {
     if (!game) return;
@@ -431,6 +474,8 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     sse.addEventListener('pairing.assigned', onPairingAssigned);
     sse.addEventListener('pairing.waiting', onPairingWaiting);
     sse.addEventListener('phase_changed', onPhaseChanged);
+    sse.addEventListener('question.found_answers', onAnswersFound);
+    sse.addEventListener('question.hints', onHintsRevealed);
     sse.addEventListener('team.created', onTeamCreated);
     sse.addEventListener('test.buzz', onTestBuzz);
 
@@ -438,49 +483,51 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
       sse.removeEventListener('pairing.assigned', onPairingAssigned);
       sse.removeEventListener('pairing.waiting', onPairingWaiting);
       sse.removeEventListener('phase_changed', onPhaseChanged);
+      sse.removeEventListener('question.found_answers', onAnswersFound);
+      sse.removeEventListener('question.hints', onHintsRevealed);
       sse.removeEventListener('team.created', onTeamCreated);
       sse.removeEventListener('test.buzz', onTestBuzz);
     };
-  }, [sse, onPairingAssigned, onPairingWaiting, onPhaseChanged, onTeamCreated, onTestBuzz]);
+  }, [sse, onPairingAssigned, onPairingWaiting, onPhaseChanged, onAnswersFound, onHintsRevealed, onTeamCreated, onTestBuzz]);
 
   const value: GameManagementContextType = {
     // State
     games,
-    playlists,
+    questionsSequences,
     teams,
     currentTeamPairing,
     game,
-    song,
+    question,
     buzzers,
     gameState,
     setGame,
     setTeams,
-    pointFieldsFound,
-    bonusFieldsFound,
+    answersFound,
+    hintsFound,
     teamIdBuzzing,
 
     // Actions
     loadSelectedGame,
     loadGames,
-    loadPlaylists,
+    loadQuestionsSequences,
     loadTeams,
-    importPlaylist,
-    createGameWithPlaylist,
+    importQuestionsSequence,
+    createGame,
     createTeamWithoutBuzzer,
-    revealField,
+    markAnswerFound,
     grantTeamPoints,
-    resetFoundFields,
+    resetFoundAnswers,
     resetWholeGame,
     setTeamIdBuzzing,
 
-    // Tests
+    // Guards
     canPairTeams,
     canDeleteTeam,
     canStartGame,
     canResumeGame,
     canPauseGame,
-    canRevealSong,
-    canGoNextSong,
+    canRevealQuestion,
+    canGoNextQuestion,
     canStopGame,
     canEndGame,
     canDeleteGame,

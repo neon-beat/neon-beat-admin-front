@@ -1,32 +1,74 @@
-import { Flex } from "antd";
-import useNeonBeatGame, { type Field } from "../Hooks/useNeonBeatGame";
+import { Flex, Typography } from "antd";
+import useNeonBeatGame from "../Hooks/useNeonBeatGame";
 import SongAnswer from "./SongAnswer";
 
 function SongController() {
-  const { song, revealField, pointFieldsFound, bonusFieldsFound } = useNeonBeatGame();
+  const { question, markAnswerFound, answersFound } = useNeonBeatGame();
 
-  const handleOnReveal = async (field: Field, kind: string) => {
-    await revealField(field, kind);
-  };
-
-  if (!song) {
-    return <div>No song currently playing</div>;
+  if (!question) {
+    return <div>No question currently active</div>;
   }
 
-  return <Flex vertical gap="small" className="grow-1">
-    {song.point_fields && song.point_fields.map((field) => <SongAnswer
-      key={field.key}
-      field={field}
-      isRevealed={pointFieldsFound.includes(field.key)}
-      onReveal={(field) => handleOnReveal(field, 'point')}
-    />)}
-    {song.bonus_fields && song.bonus_fields.map((field) => <SongAnswer
-      key={field.key}
-      field={field}
-      isRevealed={bonusFieldsFound.includes(field.key)}
-      onReveal={(field) => handleOnReveal(field, 'bonus')}
-    />)}
-  </Flex>;
+  if (question.type === 'blind_test') {
+    return (
+      <Flex vertical gap="small" className="grow-1">
+        {Object.entries(question.answers).map(([idStr, answer]) => {
+          const answerId = parseInt(idStr, 10);
+          const label = answer.is_bonus
+            ? `[Bonus] ${answer.key}: ${answer.value}`
+            : `${answer.key}: ${answer.value}`;
+          return (
+            <SongAnswer
+              key={idStr}
+              label={label}
+              isRevealed={answersFound.includes(answerId)}
+              onReveal={() => markAnswerFound(question.id, answerId)}
+            />
+          );
+        })}
+      </Flex>
+    );
+  }
+
+  if (question.type === 'multiple_choice') {
+    return (
+      <Flex vertical gap="small" className="grow-1">
+        <Typography.Text strong>{question.prompt}</Typography.Text>
+        {Object.entries(question.answers).map(([idStr, answer]) => {
+          const answerId = parseInt(idStr, 10);
+          return (
+            <SongAnswer
+              key={idStr}
+              label={answer.text}
+              isRevealed={answersFound.includes(answerId)}
+              onReveal={() => markAnswerFound(question.id, answerId)}
+            />
+          );
+        })}
+      </Flex>
+    );
+  }
+
+  if (question.type === 'open') {
+    return (
+      <Flex vertical gap="small" className="grow-1">
+        <Typography.Text strong>{question.prompt}</Typography.Text>
+        {Object.entries(question.answers).map(([idStr, answer]) => {
+          const answerId = parseInt(idStr, 10);
+          return (
+            <SongAnswer
+              key={idStr}
+              label={answer.text}
+              isRevealed={answersFound.includes(answerId)}
+              onReveal={() => markAnswerFound(question.id, answerId)}
+            />
+          );
+        })}
+      </Flex>
+    );
+  }
+
+  return null;
 }
 
 export default SongController;

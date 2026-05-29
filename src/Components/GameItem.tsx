@@ -19,7 +19,8 @@ function GameItem({ game, isLoadedGame }: { game: Game, isLoadedGame?: boolean }
       <Flex gap="small">
         <span className="!text-xs">{game?.created_at ? `Created on ${new Date(game.created_at).toLocaleDateString()}` : 'Unknown creation date'}</span>
         <span className="!text-xs">{game?.updated_at ? `Last played on ${new Date(game.updated_at).toLocaleDateString()}` : 'Unknown last play date'}</span>
-        <span className="!text-xs">{game?.current_song_index && game.playlist.songs?.length ? `Progression : ${game.current_song_index} / ${game.playlist.songs?.length}` : 'Unknown progression'}</span>
+        <span className="!text-xs">{game?.current_question_index !== undefined ? `Progress: question ${game.current_question_index + 1}` : 'Not started'}</span>
+        <span className="!text-xs">{game?.questions_sequence?.name ? `Sequence: ${game.questions_sequence.name}` : ''}</span>
       </Flex>
     </Flex>
     <Flex gap="small">

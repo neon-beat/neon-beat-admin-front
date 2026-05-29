@@ -2,11 +2,10 @@ import { useContext, useState } from "react";
 import { Button, Flex, Modal, Upload } from "antd";
 import { FaUpload } from "react-icons/fa6";
 import MessageContext from "../Context/MessageContext";
-import type { Playlist } from "../Hooks/useNeonBeatGame";
 
 const { Dragger } = Upload;
 
-function ImportPlaylist({ onImport }: { onImport?: (payload: Playlist) => Promise<void> }) {
+function ImportPlaylist({ onImport }: { onImport?: (payload: { name: string; questions: unknown[] }) => Promise<void> }) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [importLoading, setImportLoading] = useState<boolean>(false);
 
@@ -23,18 +22,13 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: Playlist) => Promis
   const handleOk = async (file: File) => {
     setImportLoading(true);
     try {
-      console.log(file);
       const text = await file.text();
-      const playlistData = JSON.parse(text);
-
-      const payload: Playlist = {
-        ...playlistData
-      }
-      await onImport?.(payload);
+      const sequenceData = JSON.parse(text);
+      await onImport?.(sequenceData);
     } catch (error: unknown) {
       console.log('Import error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error importing playlist: ${errorMessage}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error importing questions sequence: ${errorMessage}`);
     } finally {
       setImportLoading(false);
       setModalOpen(false);
@@ -43,9 +37,9 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: Playlist) => Promis
 
   return (
     <>
-      <Button type="primary" icon={<FaUpload />} onClick={() => setModalOpen((prev) => !prev)}>Import Playlist</Button>
+      <Button type="primary" icon={<FaUpload />} onClick={() => setModalOpen((prev) => !prev)}>Import Questions Sequence</Button>
       <Modal
-        title="Import Playlist"
+        title="Import Questions Sequence"
         open={modalOpen}
         onCancel={handleCancel}
         footer={() => null}
@@ -65,9 +59,9 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: Playlist) => Promis
           <Flex justify="center" className="ant-upload-drag-icon !mb-2">
             <FaUpload />
           </Flex>
-          <p className="ant-upload-text">Click or drag JSON file to this area to import playlist</p>
+          <p className="ant-upload-text">Click or drag JSON file to this area to import questions sequence</p>
           <p className="ant-upload-hint">
-            The file should be a valid JSON playlist file.
+            The file should be a valid JSON questions sequence file.
           </p>
         </Dragger>
       </Modal>
