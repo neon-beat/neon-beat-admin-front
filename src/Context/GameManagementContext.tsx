@@ -155,7 +155,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
   }
   const { messageApi } = messageContext;
 
-  const { sse, getQuestion, getGames, getGame, postGame, loadGame,
+  const { sse, getGames, getGame, postGame, loadGame,
     getCurrentPhase, getQuestionsSequences, postQuestionsSequence, postAnswerFound,
     getTeams, postTeam, isServerReady, postScore,
   } = useApiContext();
