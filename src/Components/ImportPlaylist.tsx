@@ -2,10 +2,13 @@ import { useContext, useState } from "react";
 import { Button, Flex, Modal, Upload } from "antd";
 import { FaUpload } from "react-icons/fa6";
 import MessageContext from "../Context/MessageContext";
+import type { LegacyCreatePlaylistRequest } from "../Context/ApiContext";
 
 const { Dragger } = Upload;
 
-function ImportPlaylist({ onImport }: { onImport?: (payload: { name: string; questions: unknown[] }) => Promise<void> }) {
+type ImportPlaylistPayload = { name: string; questions: unknown[] } | LegacyCreatePlaylistRequest;
+
+function ImportPlaylist({ text, onImport }: { text: string; onImport?: (payload: ImportPlaylistPayload) => Promise<void> }) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [importLoading, setImportLoading] = useState<boolean>(false);
 
@@ -28,7 +31,12 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: { name: string; que
     } catch (error: unknown) {
       console.log('Import error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') messageApi.error(`Error importing questions sequence: ${errorMessage}`);
+      if (import.meta.env.VITE_DEBUG_LEVEL !== 'none') {
+        messageApi.error({
+          content: `Error importing ${text.toLowerCase()}: ${errorMessage}`,
+          duration: 8,
+        });
+      }
     } finally {
       setImportLoading(false);
       setModalOpen(false);
@@ -37,9 +45,9 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: { name: string; que
 
   return (
     <>
-      <Button type="primary" icon={<FaUpload />} onClick={() => setModalOpen((prev) => !prev)}>Import Questions Sequence</Button>
+      <Button type="primary" icon={<FaUpload />} onClick={() => setModalOpen((prev) => !prev)}>{text}</Button>
       <Modal
-        title="Import Questions Sequence"
+        title={text}
         open={modalOpen}
         onCancel={handleCancel}
         footer={() => null}
@@ -59,9 +67,9 @@ function ImportPlaylist({ onImport }: { onImport?: (payload: { name: string; que
           <Flex justify="center" className="ant-upload-drag-icon !mb-2">
             <FaUpload />
           </Flex>
-          <p className="ant-upload-text">Click or drag JSON file to this area to import questions sequence</p>
+          <p className="ant-upload-text">Click or drag a JSON file to this area to import {text.toLowerCase()}</p>
           <p className="ant-upload-hint">
-            The file should be a valid JSON questions sequence file.
+            The file should be a valid JSON file for {text.toLowerCase()}.
           </p>
         </Dragger>
       </Modal>

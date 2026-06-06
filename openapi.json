@@ -1,0 +1,3297 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "neon-beat-back",
+    "description": "",
+    "license": {
+      "name": ""
+    },
+    "version": "0.9.0"
+  },
+  "paths": {
+    "/admin/game/end": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Mark the game as finished and perform cleanup.",
+        "operationId": "end_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game ended",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/next": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Advance to the next question in the running game.",
+        "operationId": "next_question",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Advanced to next question",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NextQuestionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/pause": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Pause the current game flow, freezing timers and buzzers.",
+        "operationId": "pause_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game paused",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/question/answer-found": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Flag an answer as discovered for the current question.",
+        "operationId": "mark_answer_found",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnswerFoundRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Updated discovered answers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnswersFoundResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/question/hint": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Reveal a hint for the current question.",
+        "operationId": "reveal_hint",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionHintRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Updated revealed hints",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuestionHintsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/question/submit-validation": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Submit an admin validation decision for the currently submitted answer.",
+        "operationId": "submit_question_validation",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionValidationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Answer validation applied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/resume": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Resume a previously paused game.",
+        "operationId": "resume_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game resumed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/reveal": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Explicitly reveal the current question's answer to participants.",
+        "operationId": "reveal_question",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Question revealed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/start": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Begin a game session and publish the first question to admins.",
+        "operationId": "start_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartGameResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/game/stop": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Stop the game early and return final team standings.",
+        "operationId": "stop_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game stopped",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StopGameResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/games": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Retrieve all games known to the system for administration purposes.",
+        "operationId": "list_games",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List available games",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GameListItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Generate a game using an existing questions sequence as the source material.",
+        "operationId": "create_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shuffle",
+            "in": "query",
+            "description": "Shuffle questions (default false)",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGameRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Game created from questions sequence",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/games/with-playlist": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Deprecated: create a game with a legacy playlist",
+        "description": "Deprecated since 0.9.0. Use POST /admin/games/with-questions-sequence instead.",
+        "operationId": "create_game_with_playlist",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shuffle",
+            "in": "query",
+            "description": "Shuffle questions (default false)",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LegacyCreateGameWithPlaylistRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Game created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameSummary"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/admin/games/with-questions-sequence": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Create a bespoke game definition under admin control.",
+        "operationId": "create_game_with_questions_sequence",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shuffle",
+            "in": "query",
+            "description": "Shuffle questions (default false)",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGameWithQuestionsSequenceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Game created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/games/{id}": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Retrieve a game by its ID.",
+        "operationId": "get_game_by_id",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of the game to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameSummary"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Delete a persisted game by its identifier.",
+        "operationId": "delete_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of the game to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Game deleted"
+          }
+        }
+      }
+    },
+    "/admin/games/{id}/load": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Load and activate a stored game for continued play.",
+        "operationId": "load_game",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of the game to load",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shuffle",
+            "in": "query",
+            "description": "Shuffle questions (default false) ; only applies when loading a game that has not yet started or whose sequence is completely played",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Game loaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/playlists": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Deprecated: list legacy playlists",
+        "description": "Deprecated since 0.9.0. Use GET /admin/questions-sequence instead.",
+        "operationId": "list_playlists",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List available legacy playlists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LegacyPlaylistListItem"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Deprecated: create a questions sequence from a legacy playlist",
+        "description": "Deprecated since 0.9.0. Use POST /admin/questions-sequence instead.",
+        "operationId": "create_deprecated_playlist",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LegacyPlaylistInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Questions sequence created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuestionsSequenceSummary"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/admin/questions-sequence": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Retrieve questions sequences eligible for generating new games.",
+        "operationId": "list_questions_sequences",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List available questions sequences",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QuestionsSequenceListItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Create a reusable questions sequence definition for later use in games.",
+        "operationId": "create_questions_sequence",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionsSequenceInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Questions sequence created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuestionsSequenceSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/teams": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Create a new team in the active game during prep phase.",
+        "operationId": "create_team",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTeamRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Team created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/teams/pairing": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Start the buzzer pairing workflow for teams during prep phase.",
+        "operationId": "start_pairing",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartPairingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Pairing started"
+          }
+        }
+      }
+    },
+    "/admin/teams/pairing/abort": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Abort the buzzer pairing workflow and restore teams to their pre-pairing state.",
+        "operationId": "abort_pairing",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pairing aborted and roster restored",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeamSummary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/teams/{id}": {
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Update an existing team's information (name, buzzer, score, or color).",
+        "operationId": "update_team",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of the team to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTeamRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Team updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamSummary"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Delete a team from the active game during prep phase.",
+        "operationId": "delete_team",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of the team to delete",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Team deleted"
+          }
+        }
+      }
+    },
+    "/admin/teams/{id}/score": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Adjust the score for a specific team by team ID.",
+        "operationId": "adjust_score",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "description": "Admin token issued by the /sse/admin stream",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identifier of the team to adjust",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScoreAdjustmentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Score adjusted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoreUpdateResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "tags": [
+          "crate::routes::health"
+        ],
+        "summary": "Return the current health status of the backend and ping the storage backend.",
+        "operationId": "healthcheck",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/pairing": {
+      "get": {
+        "tags": [
+          "public"
+        ],
+        "summary": "Return the current pairing workflow status for public clients.",
+        "operationId": "get_pairing_status",
+        "responses": {
+          "200": {
+            "description": "Current pairing status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PairingStatusResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/phase": {
+      "get": {
+        "tags": [
+          "public"
+        ],
+        "summary": "Return the high-level phase the game is currently in.",
+        "operationId": "get_game_phase",
+        "responses": {
+          "200": {
+            "description": "Current game phase",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GamePhaseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/question": {
+      "get": {
+        "tags": [
+          "public"
+        ],
+        "summary": "Return the question currently being played and progress made so far.",
+        "operationId": "get_current_question",
+        "responses": {
+          "200": {
+            "description": "Current question",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CurrentQuestionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No active question"
+          }
+        }
+      }
+    },
+    "/public/teams": {
+      "get": {
+        "tags": [
+          "public"
+        ],
+        "summary": "Return the teams currently participating in the game.",
+        "operationId": "get_teams",
+        "responses": {
+          "200": {
+            "description": "Current teams",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sse/admin": {
+      "get": {
+        "tags": [
+          "sse"
+        ],
+        "summary": "Stream admin-only events, establishing or validating the admin token.",
+        "operationId": "admin_stream",
+        "responses": {
+          "200": {
+            "description": "Admin SSE stream with authentication token",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Admin stream already in use (single connection enforced)"
+          }
+        }
+      }
+    },
+    "/sse/public": {
+      "get": {
+        "tags": [
+          "sse"
+        ],
+        "summary": "Stream realtime public events to connected frontends.",
+        "operationId": "public_stream",
+        "responses": {
+          "200": {
+            "description": "Public SSE stream with real-time game events",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ws": {
+      "get": {
+        "tags": [
+          "crate::routes::websocket"
+        ],
+        "summary": "Upgrade the HTTP connection into a buzzer WebSocket session.",
+        "operationId": "ws_handler",
+        "responses": {
+          "101": {
+            "description": "Switching protocols to WebSocket"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActionResponse": {
+        "type": "object",
+        "description": "Generic action acknowledgement used by admin endpoints.",
+        "required": [
+          "message"
+        ],
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Human-readable message describing the action result."
+          }
+        }
+      },
+      "AnswerFoundRequest": {
+        "type": "object",
+        "description": "Request to mark an answer as found.",
+        "required": [
+          "question_id",
+          "answer_id"
+        ],
+        "properties": {
+          "answer_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID identifying the answer within the question.",
+            "minimum": 0
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the question containing the answer.",
+            "minimum": 0
+          }
+        }
+      },
+      "AnswerValidationEvent": {
+        "type": "object",
+        "description": "Broadcast when an answer has been validated or invalidated.",
+        "required": [
+          "question_id",
+          "valid"
+        ],
+        "properties": {
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the question being validated.",
+            "minimum": 0
+          },
+          "valid": {
+            "$ref": "#/components/schemas/QuestionValidation",
+            "description": "Validation result for the answer."
+          }
+        }
+      },
+      "AnswersFoundResponse": {
+        "type": "object",
+        "description": "Response summarising the answers found for the current question.",
+        "required": [
+          "question_id",
+          "answers_ids"
+        ],
+        "properties": {
+          "answers_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "List of answer IDs that have been found."
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the current question.",
+            "minimum": 0
+          }
+        }
+      },
+      "BlindTestAnswerInput": {
+        "type": "object",
+        "description": "Blindtest answer details required for a question.",
+        "required": [
+          "key",
+          "value",
+          "points"
+        ],
+        "properties": {
+          "is_bonus": {
+            "type": "boolean",
+            "description": "Whether this answer is a bonus answer."
+          },
+          "key": {
+            "type": "string",
+            "description": "Unique key identifying this answer field."
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Points awarded for finding this answer.",
+            "minimum": 0
+          },
+          "value": {
+            "type": "string",
+            "description": "The answer/value for this field."
+          }
+        }
+      },
+      "BlindTestAnswerSnapshot": {
+        "type": "object",
+        "description": "Snapshot of a blindtest answer exposed to public runtime consumers.",
+        "required": [
+          "key",
+          "value",
+          "points",
+          "is_bonus"
+        ],
+        "properties": {
+          "is_bonus": {
+            "type": "boolean",
+            "description": "Whether this answer is a bonus answer."
+          },
+          "key": {
+            "type": "string",
+            "description": "Unique key identifying this answer field."
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Points awarded for finding this answer.",
+            "minimum": 0
+          },
+          "value": {
+            "type": "string",
+            "description": "The answer/value for this field."
+          }
+        }
+      },
+      "BlindTestAnswerSummary": {
+        "type": "object",
+        "description": "Summary of a blindtest answer.",
+        "required": [
+          "key",
+          "value",
+          "points",
+          "is_bonus"
+        ],
+        "properties": {
+          "is_bonus": {
+            "type": "boolean",
+            "description": "Whether this answer is a bonus answer."
+          },
+          "key": {
+            "type": "string",
+            "description": "Unique key identifying this answer field."
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Points awarded for finding this answer.",
+            "minimum": 0
+          },
+          "value": {
+            "type": "string",
+            "description": "The answer/value for this field."
+          }
+        }
+      },
+      "BlindTestQuestionInput": {
+        "type": "object",
+        "description": "Blindtest question details required to populate a sequence.",
+        "required": [
+          "starts_at_ms",
+          "guess_duration_ms",
+          "url",
+          "answers"
+        ],
+        "properties": {
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlindTestAnswerInput"
+            },
+            "description": "Answers for this question."
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "starts_at_ms": {
+            "type": "integer",
+            "description": "Start time in milliseconds for media playback.",
+            "minimum": 0
+          },
+          "url": {
+            "type": "string",
+            "description": "URL of the media file."
+          }
+        }
+      },
+      "BlindTestQuestionSnapshot": {
+        "type": "object",
+        "description": "Snapshot of a blindtest question exposed to public runtime consumers.",
+        "required": [
+          "id",
+          "starts_at_ms",
+          "guess_duration_ms",
+          "url",
+          "answers"
+        ],
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "Answers for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/BlindTestAnswerSnapshot"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique identifier for the question.",
+            "minimum": 0
+          },
+          "starts_at_ms": {
+            "type": "integer",
+            "description": "Start time in milliseconds for playback.",
+            "minimum": 0
+          },
+          "url": {
+            "type": "string",
+            "description": "URL of the media file."
+          }
+        }
+      },
+      "BlindTestQuestionSummary": {
+        "type": "object",
+        "description": "Summary of a blindtest question.",
+        "required": [
+          "id",
+          "starts_at_ms",
+          "guess_duration_ms",
+          "url",
+          "answers"
+        ],
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "Answers for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/BlindTestAnswerSummary"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique identifier for the question.",
+            "minimum": 0
+          },
+          "starts_at_ms": {
+            "type": "integer",
+            "description": "Start time in milliseconds for playback.",
+            "minimum": 0
+          },
+          "url": {
+            "type": "string",
+            "description": "URL of the media file."
+          }
+        }
+      },
+      "BuzzerInboundMessage": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Buzzer identifies itself with an ID.",
+            "required": [
+              "id",
+              "type"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the buzzer device."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "identification"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "Buzzer button was pressed.",
+            "required": [
+              "id",
+              "type"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the buzzer device."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "buzz"
+                ]
+              }
+            }
+          }
+        ],
+        "description": "Messages accepted from buzzer WebSocket clients."
+      },
+      "CreateGameRequest": {
+        "type": "object",
+        "description": "Payload describing how to spin up a game from an existing questions sequence.",
+        "required": [
+          "name",
+          "teams",
+          "questions_sequence_id"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name for the new game."
+          },
+          "questions_sequence_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the questions sequence to use for this game."
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamInput"
+            },
+            "description": "List of teams participating in the game."
+          }
+        }
+      },
+      "CreateGameWithQuestionsSequenceRequest": {
+        "type": "object",
+        "description": "Payload used to bootstrap a brand-new game instance with an inline questions sequence.",
+        "required": [
+          "name",
+          "teams",
+          "questions_sequence"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name for the new game."
+          },
+          "questions_sequence": {
+            "$ref": "#/components/schemas/QuestionsSequenceInput",
+            "description": "Questions sequence definition for the game."
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamInput"
+            },
+            "description": "List of teams participating in the game."
+          }
+        }
+      },
+      "CreateTeamRequest": {
+        "$ref": "#/components/schemas/TeamInput",
+        "description": "Request payload to create a new team during the prep phase."
+      },
+      "CurrentQuestionResponse": {
+        "type": "object",
+        "description": "Response describing the question currently being played and progress made so far.",
+        "required": [
+          "question",
+          "answers_ids",
+          "hints_ids"
+        ],
+        "properties": {
+          "answers_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "Answer IDs already found."
+          },
+          "hints_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "Hint IDs already revealed."
+          },
+          "question": {
+            "$ref": "#/components/schemas/QuestionSnapshot",
+            "description": "Details of the current question."
+          }
+        }
+      },
+      "GameListItem": {
+        "type": "object",
+        "description": "Minimal projection of a game when listed for administrators.",
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "teams",
+          "questions_sequence"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "RFC3339 timestamp when the game was created."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the game."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the game."
+          },
+          "questions_sequence": {
+            "$ref": "#/components/schemas/QuestionsSequenceListItem",
+            "description": "Minimal questions sequence information."
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamBriefSummary"
+            },
+            "description": "Brief summaries of teams in the game."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "RFC3339 timestamp when the game was last updated."
+          }
+        }
+      },
+      "GamePhaseResponse": {
+        "$ref": "#/components/schemas/GamePhaseSnapshot",
+        "description": "Response exposing the game's global phase as seen by the public."
+      },
+      "GamePhaseSnapshot": {
+        "type": "object",
+        "description": "Shared snapshot describing the current gameplay phase and related context.",
+        "required": [
+          "phase",
+          "degraded"
+        ],
+        "properties": {
+          "answers_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "Present during playing/reveal phases to expose answer IDs already found."
+          },
+          "degraded": {
+            "type": "boolean",
+            "description": "True when the backend operates in degraded mode (no connexion to database)."
+          },
+          "game_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "ID of the active game (if any)."
+          },
+          "hints_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "Present during playing/reveal phases to expose hint IDs already revealed."
+          },
+          "pairing_team_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "Present during prep_pairing phase to indicate the active team."
+          },
+          "paused_buzzer": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Present during pause phase for buzz-induced pauses to expose the buzzer identifier."
+          },
+          "phase": {
+            "$ref": "#/components/schemas/VisibleGamePhase",
+            "description": "Current phase of the game."
+          },
+          "question": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/QuestionSnapshot",
+                "description": "Present during playing/reveal phases to expose the current question."
+              }
+            ]
+          },
+          "scoreboard": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TeamSummary"
+            },
+            "description": "Present during scores phase to display the final scores."
+          }
+        }
+      },
+      "GameSummary": {
+        "type": "object",
+        "description": "Summary returned once a game has been created or loaded.",
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "teams",
+          "questions_sequence"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "RFC3339 timestamp when the game was created."
+          },
+          "current_question_index": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Index of the current question being played (if any).",
+            "minimum": 0
+          },
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the game."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the game."
+          },
+          "questions_sequence": {
+            "$ref": "#/components/schemas/QuestionsSequenceSummary",
+            "description": "Summary of the questions sequence used in the game."
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSummary"
+            },
+            "description": "List of teams in the game."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "RFC3339 timestamp when the game was last updated."
+          }
+        }
+      },
+      "Handshake": {
+        "type": "object",
+        "description": "Initial metadata sent to an SSE client when it connects.",
+        "required": [
+          "stream",
+          "message",
+          "degraded"
+        ],
+        "properties": {
+          "degraded": {
+            "type": "boolean",
+            "description": "Whether the backend is running without a storage backend connection."
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message confirming the subscription."
+          },
+          "stream": {
+            "type": "string",
+            "description": "Identifier of the SSE stream (`public` or `admin`)."
+          },
+          "token": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional admin token returned when the stream is privileged."
+          }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "description": "Simple health response returned by the `/healthcheck` route.",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Health status (\"ok\" or \"degraded\")."
+          }
+        }
+      },
+      "HintSnapshot": {
+        "type": "object",
+        "description": "Snapshot of a question hint exposed to public runtime consumers.",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Hint text."
+          }
+        }
+      },
+      "HintSummary": {
+        "type": "object",
+        "description": "Summary of a question hint.",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Hint text."
+          }
+        }
+      },
+      "LegacyCreateGameWithPlaylistRequest": {
+        "type": "object",
+        "description": "Deprecated payload used to bootstrap a game with a legacy playlist.",
+        "required": [
+          "name",
+          "teams",
+          "playlist"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name for the new game."
+          },
+          "playlist": {
+            "$ref": "#/components/schemas/LegacyPlaylistInput",
+            "description": "Legacy playlist definition for the game."
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamInput"
+            },
+            "description": "List of teams participating in the game."
+          }
+        },
+        "deprecated": true
+      },
+      "LegacyPlaylistInput": {
+        "type": "object",
+        "description": "Deprecated playlist metadata supplied by legacy clients.",
+        "required": [
+          "name",
+          "songs"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name for the playlist."
+          },
+          "songs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LegacySongInput"
+            },
+            "description": "List of songs in the playlist."
+          }
+        },
+        "deprecated": true
+      },
+      "LegacyPlaylistListItem": {
+        "type": "object",
+        "description": "Deprecated playlist projection returned by legacy playlist routes.",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the playlist."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the playlist."
+          }
+        },
+        "deprecated": true
+      },
+      "LegacyPointFieldInput": {
+        "type": "object",
+        "description": "Deprecated point field details supplied by legacy clients.",
+        "required": [
+          "key",
+          "value",
+          "points"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Unique key identifying this field."
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Points awarded for finding this field.",
+            "minimum": 0
+          },
+          "value": {
+            "type": "string",
+            "description": "The answer/value for this field."
+          }
+        },
+        "deprecated": true
+      },
+      "LegacySongInput": {
+        "type": "object",
+        "description": "Deprecated song details supplied by legacy clients.",
+        "required": [
+          "starts_at_ms",
+          "guess_duration_ms",
+          "url",
+          "point_fields"
+        ],
+        "properties": {
+          "bonus_fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LegacyPointFieldInput"
+            },
+            "description": "Bonus fields for this song."
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "point_fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LegacyPointFieldInput"
+            },
+            "description": "Point fields for this song."
+          },
+          "starts_at_ms": {
+            "type": "integer",
+            "description": "Start time in milliseconds for the song playback.",
+            "minimum": 0
+          },
+          "url": {
+            "type": "string",
+            "description": "URL of the song media file."
+          }
+        },
+        "deprecated": true
+      },
+      "MultipleChoiceAnswerInput": {
+        "type": "object",
+        "description": "Multiple-choice answer details required for a question.",
+        "required": [
+          "text",
+          "is_correct"
+        ],
+        "properties": {
+          "is_correct": {
+            "type": "boolean",
+            "description": "Whether this answer is correct."
+          },
+          "text": {
+            "type": "string",
+            "description": "Answer text."
+          }
+        }
+      },
+      "MultipleChoiceAnswerSnapshot": {
+        "type": "object",
+        "description": "Snapshot of a multiple-choice answer exposed to public runtime consumers.",
+        "required": [
+          "text",
+          "is_correct"
+        ],
+        "properties": {
+          "is_correct": {
+            "type": "boolean",
+            "description": "Whether this answer is correct."
+          },
+          "text": {
+            "type": "string",
+            "description": "Answer text."
+          }
+        }
+      },
+      "MultipleChoiceAnswerSummary": {
+        "type": "object",
+        "description": "Summary of a multiple-choice answer.",
+        "required": [
+          "text",
+          "is_correct"
+        ],
+        "properties": {
+          "is_correct": {
+            "type": "boolean",
+            "description": "Whether this answer is correct."
+          },
+          "text": {
+            "type": "string",
+            "description": "Answer text."
+          }
+        }
+      },
+      "MultipleChoiceQuestionInput": {
+        "type": "object",
+        "description": "Multiple-choice question details required to populate a sequence.",
+        "required": [
+          "guess_duration_ms",
+          "prompt",
+          "answers"
+        ],
+        "properties": {
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MultipleChoiceAnswerInput"
+            },
+            "description": "Possible answers for this question."
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "hints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Hints for this question."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt displayed to participants."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional URL of a supporting media file."
+          }
+        }
+      },
+      "MultipleChoiceQuestionSnapshot": {
+        "type": "object",
+        "description": "Snapshot of a multiple-choice question exposed to public runtime consumers.",
+        "required": [
+          "id",
+          "guess_duration_ms",
+          "prompt",
+          "answers",
+          "hints"
+        ],
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "Possible answers for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MultipleChoiceAnswerSnapshot"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "hints": {
+            "type": "object",
+            "description": "Hints for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/HintSnapshot"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique identifier for the question.",
+            "minimum": 0
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt displayed to participants."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional URL of a supporting media file."
+          }
+        }
+      },
+      "MultipleChoiceQuestionSummary": {
+        "type": "object",
+        "description": "Summary of a multiple-choice question.",
+        "required": [
+          "id",
+          "guess_duration_ms",
+          "prompt",
+          "answers",
+          "hints"
+        ],
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "Possible answers for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MultipleChoiceAnswerSummary"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "hints": {
+            "type": "object",
+            "description": "Hints for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/HintSummary"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique identifier for the question.",
+            "minimum": 0
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt displayed to participants."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional URL of a supporting media file."
+          }
+        }
+      },
+      "NextQuestionResponse": {
+        "type": "object",
+        "description": "Response describing the state of the sequence after moving to the next question.",
+        "required": [
+          "finished"
+        ],
+        "properties": {
+          "finished": {
+            "type": "boolean",
+            "description": "Whether the sequence has been completed."
+          },
+          "question": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/QuestionSummary",
+                "description": "Summary of the next question, if any."
+              }
+            ]
+          }
+        }
+      },
+      "OpenAnswerInput": {
+        "type": "object",
+        "description": "Open answer details required for a question.",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Accepted answer text."
+          }
+        }
+      },
+      "OpenAnswerSnapshot": {
+        "type": "object",
+        "description": "Snapshot of an open answer exposed to public runtime consumers.",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Accepted answer text."
+          }
+        }
+      },
+      "OpenAnswerSummary": {
+        "type": "object",
+        "description": "Summary of an open answer.",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Accepted answer text."
+          }
+        }
+      },
+      "OpenQuestionInput": {
+        "type": "object",
+        "description": "Open question details required to populate a sequence.",
+        "required": [
+          "guess_duration_ms",
+          "prompt",
+          "answers"
+        ],
+        "properties": {
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenAnswerInput"
+            },
+            "description": "Accepted answers for this question."
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "hints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Hints for this question."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt displayed to participants."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional URL of a supporting media file."
+          }
+        }
+      },
+      "OpenQuestionSnapshot": {
+        "type": "object",
+        "description": "Snapshot of an open question exposed to public runtime consumers.",
+        "required": [
+          "id",
+          "guess_duration_ms",
+          "prompt",
+          "answers",
+          "hints"
+        ],
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "Accepted answers for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/OpenAnswerSnapshot"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "hints": {
+            "type": "object",
+            "description": "Hints for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/HintSnapshot"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique identifier for the question.",
+            "minimum": 0
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt displayed to participants."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional URL of a supporting media file."
+          }
+        }
+      },
+      "OpenQuestionSummary": {
+        "type": "object",
+        "description": "Summary of an open question.",
+        "required": [
+          "id",
+          "guess_duration_ms",
+          "prompt",
+          "answers",
+          "hints"
+        ],
+        "properties": {
+          "answers": {
+            "type": "object",
+            "description": "Accepted answers for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/OpenAnswerSummary"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "guess_duration_ms": {
+            "type": "integer",
+            "description": "Duration in milliseconds for guessing.",
+            "minimum": 0
+          },
+          "hints": {
+            "type": "object",
+            "description": "Hints for this question.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/HintSummary"
+            },
+            "propertyNames": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            }
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique identifier for the question.",
+            "minimum": 0
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt displayed to participants."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional URL of a supporting media file."
+          }
+        }
+      },
+      "PairingAssignedEvent": {
+        "type": "object",
+        "description": "Event emitted when a buzzer has been assigned during pairing.",
+        "required": [
+          "team_id",
+          "buzzer_id"
+        ],
+        "properties": {
+          "buzzer_id": {
+            "type": "string",
+            "description": "ID of the buzzer that was assigned."
+          },
+          "team_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the team that was paired."
+          }
+        }
+      },
+      "PairingRestoredEvent": {
+        "type": "object",
+        "description": "Event emitted when pairing is aborted and teams restored.",
+        "required": [
+          "snapshot"
+        ],
+        "properties": {
+          "snapshot": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSummary"
+            },
+            "description": "Snapshot of teams restored to their pre-pairing state."
+          }
+        }
+      },
+      "PairingStatusResponse": {
+        "type": "object",
+        "description": "Public response describing the state of the pairing workflow.",
+        "required": [
+          "is_pairing"
+        ],
+        "properties": {
+          "is_pairing": {
+            "type": "boolean",
+            "description": "Whether pairing is currently active."
+          },
+          "team_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "ID of the team currently pairing (if any)."
+          }
+        }
+      },
+      "PairingWaitingEvent": {
+        "type": "object",
+        "description": "Event emitted when the pairing workflow awaits the next team.",
+        "required": [
+          "team_id"
+        ],
+        "properties": {
+          "team_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the team that should pair their buzzer."
+          }
+        }
+      },
+      "PhaseChangedEvent": {
+        "$ref": "#/components/schemas/GamePhaseSnapshot",
+        "description": "Broadcast whenever the gameplay phase changes."
+      },
+      "QuestionFoundAnswersEvent": {
+        "type": "object",
+        "description": "Broadcast when answers have been marked as found.",
+        "required": [
+          "question_id",
+          "answers_ids"
+        ],
+        "properties": {
+          "answers_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "IDs of answers that have been found."
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the question containing the answers.",
+            "minimum": 0
+          }
+        }
+      },
+      "QuestionHintRequest": {
+        "type": "object",
+        "description": "Request to reveal a hint for a question.",
+        "required": [
+          "question_id",
+          "hint_id"
+        ],
+        "properties": {
+          "hint_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID identifying the hint within the question.",
+            "minimum": 0
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the question containing the hint.",
+            "minimum": 0
+          }
+        }
+      },
+      "QuestionHintsEvent": {
+        "type": "object",
+        "description": "Broadcast when question hints have been revealed.",
+        "required": [
+          "question_id",
+          "hints_ids"
+        ],
+        "properties": {
+          "hints_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "IDs of hints that have been revealed."
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the question containing the hints.",
+            "minimum": 0
+          }
+        }
+      },
+      "QuestionHintsResponse": {
+        "type": "object",
+        "description": "Response summarising the hints revealed for the current question.",
+        "required": [
+          "question_id",
+          "hints_ids"
+        ],
+        "properties": {
+          "hints_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 0
+            },
+            "description": "List of hint IDs that have been revealed."
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the current question.",
+            "minimum": 0
+          }
+        }
+      },
+      "QuestionInput": {
+        "oneOf": [
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BlindTestQuestionInput",
+                "description": "Blindtest question input."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "blind_test"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Blindtest question input."
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MultipleChoiceQuestionInput",
+                "description": "Multiple-choice question input."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "multiple_choice"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Multiple-choice question input."
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OpenQuestionInput",
+                "description": "Open text question input."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "open"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Open text question input."
+          }
+        ],
+        "description": "Tagged question input."
+      },
+      "QuestionSnapshot": {
+        "oneOf": [
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BlindTestQuestionSnapshot",
+                "description": "Blindtest question snapshot."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "blind_test"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Blindtest question snapshot."
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MultipleChoiceQuestionSnapshot",
+                "description": "Multiple-choice question snapshot."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "multiple_choice"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Multiple-choice question snapshot."
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OpenQuestionSnapshot",
+                "description": "Open question snapshot."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "open"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Open question snapshot."
+          }
+        ],
+        "description": "Snapshot of a question including answer metadata."
+      },
+      "QuestionSummary": {
+        "oneOf": [
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BlindTestQuestionSummary",
+                "description": "Blindtest question summary."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "blind_test"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Blindtest question summary."
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MultipleChoiceQuestionSummary",
+                "description": "Multiple-choice question summary."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "multiple_choice"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Multiple-choice question summary."
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OpenQuestionSummary",
+                "description": "Open question summary."
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "open"
+                    ]
+                  }
+                }
+              }
+            ],
+            "description": "Open question summary."
+          }
+        ],
+        "description": "Summary of a single question within a sequence."
+      },
+      "QuestionValidation": {
+        "type": "string",
+        "description": "Tri-state result of a question validation.",
+        "enum": [
+          "correct",
+          "incomplete",
+          "wrong"
+        ]
+      },
+      "QuestionValidationRequest": {
+        "type": "object",
+        "description": "Request to submit the current question validation using a tri-state result.",
+        "required": [
+          "question_id",
+          "valid"
+        ],
+        "properties": {
+          "question_id": {
+            "type": "integer",
+            "format": "int32",
+            "description": "ID of the question being validated.",
+            "minimum": 0
+          },
+          "valid": {
+            "$ref": "#/components/schemas/QuestionValidation",
+            "description": "Validation result for the question answer submission."
+          }
+        }
+      },
+      "QuestionsSequenceInput": {
+        "type": "object",
+        "description": "Questions sequence metadata and questions supplied when bootstrapping a game.",
+        "required": [
+          "name",
+          "questions"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name for the questions sequence."
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionInput"
+            },
+            "description": "List of questions in the sequence."
+          }
+        }
+      },
+      "QuestionsSequenceListItem": {
+        "type": "object",
+        "description": "Minimal projection of a questions sequence available for game creation.",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the questions sequence."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the questions sequence."
+          }
+        }
+      },
+      "QuestionsSequenceSummary": {
+        "type": "object",
+        "description": "Summary of a questions sequence including all questions.",
+        "required": [
+          "id",
+          "name",
+          "questions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the questions sequence."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the questions sequence."
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionSummary"
+            },
+            "description": "List of questions in the sequence."
+          }
+        }
+      },
+      "ScoreAdjustmentRequest": {
+        "type": "object",
+        "description": "Request to adjust a team's score by a delta.",
+        "required": [
+          "delta"
+        ],
+        "properties": {
+          "delta": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Points to add (positive) or subtract (negative)."
+          }
+        }
+      },
+      "ScoreUpdateResponse": {
+        "type": "object",
+        "description": "Result of a score adjustment, returning the updated tally.",
+        "required": [
+          "team_id",
+          "score"
+        ],
+        "properties": {
+          "score": {
+            "type": "integer",
+            "format": "int32",
+            "description": "New score after adjustment."
+          },
+          "team_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the team whose score was updated."
+          }
+        }
+      },
+      "StartGameResponse": {
+        "type": "object",
+        "description": "Response emitted when a game starts, including the initial question details.",
+        "required": [
+          "question"
+        ],
+        "properties": {
+          "question": {
+            "$ref": "#/components/schemas/QuestionSummary",
+            "description": "Summary of the first question in the game."
+          }
+        }
+      },
+      "StartPairingRequest": {
+        "type": "object",
+        "description": "Request payload to start a buzzer pairing session.",
+        "required": [
+          "first_team_id"
+        ],
+        "properties": {
+          "first_team_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the first team to pair their buzzer."
+          }
+        }
+      },
+      "StopGameResponse": {
+        "type": "object",
+        "description": "Response returned when a game is stopped, gathering final team scores.",
+        "required": [
+          "teams"
+        ],
+        "properties": {
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSummary"
+            },
+            "description": "Final scores and details for all teams."
+          }
+        }
+      },
+      "SystemStatus": {
+        "type": "object",
+        "description": "Broadcast when the backend enters or leaves degraded mode.",
+        "required": [
+          "degraded"
+        ],
+        "properties": {
+          "degraded": {
+            "type": "boolean",
+            "description": "Whether the system is in degraded mode."
+          }
+        }
+      },
+      "TeamBriefSummary": {
+        "type": "object",
+        "description": "Brief team information without score or color.",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the team."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the team."
+          }
+        }
+      },
+      "TeamColorDto": {
+        "type": "object",
+        "description": "HSV representation shared by DTOs (REST, SSE, WS).",
+        "required": [
+          "h",
+          "s",
+          "v"
+        ],
+        "properties": {
+          "h": {
+            "type": "number",
+            "format": "float",
+            "description": "Hue component (degrees)."
+          },
+          "s": {
+            "type": "number",
+            "format": "float",
+            "description": "Saturation component (0.0 to 1.0)."
+          },
+          "v": {
+            "type": "number",
+            "format": "float",
+            "description": "Value (brightness) component (0.0 to 1.0)."
+          }
+        }
+      },
+      "TeamCreatedEvent": {
+        "type": "object",
+        "description": "Event emitted when a new team is created.",
+        "required": [
+          "team"
+        ],
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/TeamSummary",
+            "description": "The newly created team."
+          }
+        }
+      },
+      "TeamDeletedEvent": {
+        "type": "object",
+        "description": "Event emitted when a team has been deleted.",
+        "required": [
+          "team_id"
+        ],
+        "properties": {
+          "team_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the team that was deleted."
+          }
+        }
+      },
+      "TeamInput": {
+        "type": "object",
+        "description": "Incoming team definition for the game bootstrap.",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "buzzer_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "If not specified, does not change it (or lets the back use the default value).\nIf null is specified, removes the buzzer ID.\nIf a string is specified, sets the buzzer ID to this string."
+          },
+          "color": {
+            "$ref": "#/components/schemas/TeamColorDto",
+            "description": "Optional HSV color. If omitted, the backend chooses the first unused color from the\nconfigured colors set."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name for the team."
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Initial score for the team (defaults to 0 if omitted)."
+          }
+        }
+      },
+      "TeamSummary": {
+        "type": "object",
+        "description": "Public projection of a team exposed to REST/SSE clients.",
+        "required": [
+          "id",
+          "name",
+          "score",
+          "color"
+        ],
+        "properties": {
+          "buzzer_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID of the buzzer assigned to this team."
+          },
+          "color": {
+            "$ref": "#/components/schemas/TeamColorDto",
+            "description": "HSV color assigned to the team."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the team."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the team."
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Current score for the team."
+          }
+        }
+      },
+      "TeamUpdatedEvent": {
+        "type": "object",
+        "description": "Event emitted when an existing team was updated (name, buzzer, or score).",
+        "required": [
+          "team"
+        ],
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/TeamSummary",
+            "description": "The updated team with new information."
+          }
+        }
+      },
+      "TeamsResponse": {
+        "type": "object",
+        "description": "Response payload listing the teams currently loaded in memory.",
+        "required": [
+          "teams"
+        ],
+        "properties": {
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSummary"
+            },
+            "description": "List of teams in the active game."
+          }
+        }
+      },
+      "TestBuzzEvent": {
+        "type": "object",
+        "description": "Event emitted when a buzzer buzzes during prep ready mode.",
+        "required": [
+          "team_id"
+        ],
+        "properties": {
+          "team_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the team whose buzzer was pressed."
+          }
+        }
+      },
+      "UpdateTeamRequest": {
+        "$ref": "#/components/schemas/TeamInput",
+        "description": "Request payload to update an existing team in the active game."
+      },
+      "VisibleGamePhase": {
+        "type": "string",
+        "description": "Publicly visible game phase exposed to clients (REST/SSE).",
+        "enum": [
+          "idle",
+          "prep_ready",
+          "prep_pairing",
+          "playing",
+          "pause",
+          "reveal",
+          "scores"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "health",
+      "description": "Health check endpoints"
+    },
+    {
+      "name": "sse",
+      "description": "Server-sent events streams"
+    },
+    {
+      "name": "buzzers",
+      "description": "WebSocket operations for buzzer devices"
+    },
+    {
+      "name": "game",
+      "description": "Game bootstrap operations"
+    },
+    {
+      "name": "admin",
+      "description": "Administrative controls for running games"
+    },
+    {
+      "name": "public",
+      "description": "Public read-only projections for the current game state"
+    }
+  ]
+}

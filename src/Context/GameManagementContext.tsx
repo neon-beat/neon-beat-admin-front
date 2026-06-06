@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 import type { ReactNode } from "react";
 import MessageContext from "./MessageContext";
 import { useApiContext } from "../Hooks/useApiContext";
-import type { AnswerFoundPayload, GamePayload } from "./ApiContext";
+import type { AnswerFoundPayload, GamePayload, LegacyCreatePlaylistRequest } from "./ApiContext";
 
 export interface BlindTestAnswer {
   key: string;
@@ -119,6 +119,7 @@ interface GameManagementContextType {
   loadQuestionsSequences: () => Promise<void>;
   loadTeams: () => Promise<void>;
   importQuestionsSequence: (payload: { name: string; questions: unknown[] }) => Promise<void>;
+  importLegacyGameWithPlaylist: (payload: LegacyCreatePlaylistRequest, shuffle?: boolean) => Promise<void>;
   createGame: (payload: GamePayload, shuffle: boolean) => Promise<void>;
   createTeamWithoutBuzzer: (name: string) => Promise<void>;
   markAnswerFound: (questionId: number, answerId: number) => Promise<void>;
@@ -155,9 +156,9 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
   }
   const { messageApi } = messageContext;
 
-  const { sse, getQuestion, getGames, getGame, postGame, loadGame,
+  const { sse, getGames, getGame, postGame, loadGame,
     getCurrentPhase, getQuestionsSequences, postQuestionsSequence, postAnswerFound,
-    getTeams, postTeam, isServerReady, postScore,
+    postLegacyPlaylist: postLegacyGameWithPlaylist, getTeams, postTeam, isServerReady, postScore,
   } = useApiContext();
 
   // State
@@ -209,6 +210,13 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Questions sequence imported successfully');
     loadQuestionsSequences();
   }, [postQuestionsSequence, messageApi, loadQuestionsSequences]);
+
+  const importLegacyGameWithPlaylist = useCallback(async (payload: LegacyCreatePlaylistRequest, shuffle: boolean = false) => {
+    const createdGame = await postLegacyGameWithPlaylist(payload, shuffle);
+    setGame(createdGame);
+    if (import.meta.env.VITE_DEBUG_LEVEL === 'info') messageApi.success('Legacy playlist imported successfully');
+    loadGames();
+  }, [postLegacyGameWithPlaylist, messageApi, loadGames]);
 
   const createGame = useCallback(async (payload: GamePayload, shuffle: boolean) => {
     const newGame = await postGame(payload, shuffle);
@@ -455,7 +463,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
         }
       });
     }
-  }, [isServerReady, loadGames, loadQuestionsSequences]);
+  }, [isServerReady, loadGames, loadQuestionsSequences, getCurrentPhase, getGame]);
 
   useEffect(() => {
     if (!game) return;
@@ -512,6 +520,7 @@ export const GameManagementProvider: React.FC<GameManagementProviderProps> = ({ 
     loadQuestionsSequences,
     loadTeams,
     importQuestionsSequence,
+    importLegacyGameWithPlaylist,
     createGame,
     createTeamWithoutBuzzer,
     markAnswerFound,

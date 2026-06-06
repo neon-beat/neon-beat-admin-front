@@ -25,6 +25,7 @@ interface ApiContextType {
   getCurrentPhase: () => Promise<PhasePayload>;
   getQuestionsSequences: () => Promise<QuestionsSequenceListItem[]>;
   postQuestionsSequence: (payload: { name: string; questions: unknown[] }) => Promise<void>;
+  postLegacyPlaylist: (payload: LegacyCreatePlaylistRequest, shuffle: boolean) => Promise<Game>;
   getTeams: () => Promise<Team[]>;
   postTeam: (payload: { name: string; buzzer_id?: string; score: number }) => Promise<void>;
   deleteTeam: (teamId: string) => Promise<void>;
@@ -39,6 +40,17 @@ export interface GamePayload {
   name: string;
   teams: Team[];
   questions_sequence_id: string;
+}
+
+export interface LegacyPlaylistInput {
+  name: string;
+  songs: unknown[];
+}
+
+export interface LegacyCreatePlaylistRequest {
+  name: string;
+  teams: Team[];
+  playlist: LegacyPlaylistInput;
 }
 
 export interface PhasePayload {
@@ -479,6 +491,21 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     };
   }, [sse, receiveAdminToken]);
 
+  const postLegacyPlaylist = useCallback(async (payload: LegacyCreatePlaylistRequest): Promise<Game> => {
+    const response = await fetch(`${apiBaseUrl}/admin/playlists`, {
+      method: 'POST',
+      headers: getAdminHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      const errorMessage = await getErrorMessage(response, 'Failed to create game with legacy playlist');
+      throw new Error(errorMessage);
+    }
+    return response.json();
+  }, [apiBaseUrl, getAdminHeaders]);
+
   useEffect(() => {
     if (!adminToken) return;
     setIsServerReady(true);
@@ -506,6 +533,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     // Manage Game
     postGame,
     loadGame,
+    postLegacyPlaylist,
     startGame,
     stopGame,
     endGame,

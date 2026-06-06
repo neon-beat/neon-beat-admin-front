@@ -12,7 +12,7 @@ import BuzzController from "./BuzzController";
 
 function AdminHome() {
   const { question, game, games, gameState, teams,
-    importQuestionsSequence, createGame,
+    importQuestionsSequence, importLegacyGameWithPlaylist, createGame,
     showGameList, teamIdBuzzing,
   } = useNeonBeatGame();
 
@@ -55,7 +55,8 @@ function AdminHome() {
                   }
                   <Flex vertical gap="small">
                     <Button type="primary" className="grow-1" onClick={() => setIsCreatingGame(true)}>New game</Button>
-                    <ImportPlaylist onImport={importQuestionsSequence} />
+                    <ImportPlaylist text="Import Questions Sequence" onImport={importQuestionsSequence} />
+                    <ImportPlaylist text="Import Legacy Playlist" onImport={importLegacyGameWithPlaylist} />
                   </Flex>
                 </> :
                   <GameCreator

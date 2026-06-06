@@ -13,14 +13,17 @@ function GameItem({ game, isLoadedGame }: { game: Game, isLoadedGame?: boolean }
     canStartGame, canStopGame, canEndGame, canDeleteGame,
   } = useNeonBeatGame();
   const [buzzerPairingModalOpen, setBuzzerPairingModalOpen] = useState<boolean>(false);
+
+  const sequenceLength = (game.questions_sequence as { questions?: unknown[] } | undefined)?.questions?.length;
+
   return (<Flex justify="space-between" align="center" gap="small" className="!p-2 !pl-4 border-1 border-[#424242] rounded-full">
-    <Flex vertical className="grow-1">
-      <span>{game.name}</span>
-      <Flex gap="small">
-        <span className="!text-xs">{game?.created_at ? `Created on ${new Date(game.created_at).toLocaleDateString()}` : 'Unknown creation date'}</span>
-        <span className="!text-xs">{game?.updated_at ? `Last played on ${new Date(game.updated_at).toLocaleDateString()}` : 'Unknown last play date'}</span>
-        <span className="!text-xs">{game?.current_question_index !== undefined ? `Progress: question ${game.current_question_index + 1}` : 'Not started'}</span>
-        <span className="!text-xs">{game?.questions_sequence?.name ? `Sequence: ${game.questions_sequence.name}` : ''}</span>
+    <Flex vertical className="grow-1 min-w-0">
+      <span className="truncate">{game.name}</span>
+      <Flex vertical gap="xsmall" className="!text-xs leading-tight text-neutral-400">
+        <span>{game?.created_at ? `Created on ${new Date(game.created_at).toLocaleDateString()}` : 'Unknown creation date'}</span>
+        <span>{game?.updated_at ? `Last played on ${new Date(game.updated_at).toLocaleDateString()}` : 'Unknown last play date'}</span>
+        <span>{`Sequence kength: ${sequenceLength ?? '?'}`}</span>
+        <span>{game?.questions_sequence?.name ? `Sequence: ${game.questions_sequence.name}` : ''}</span>
       </Flex>
     </Flex>
     <Flex gap="small">

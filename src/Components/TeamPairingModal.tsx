@@ -53,12 +53,12 @@ function TeamPairingModal(
     ))
       : <p>No teams available for pairing.</p>
     }
-    <Divider />
+    {/* <Divider />
     {(buzzers && buzzers.length && buzzers.length > 0) ? buzzers.map(buzzer => (
       <Button key={buzzer.id} type="default" onClick={() => handleBuzzerClick(buzzer.id)}>Buzzer {buzzer.id}</Button>
     ))
       : <p>No buzzers available.</p>
-    }
+    } */}
   </Modal>;
 }
 
