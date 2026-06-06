@@ -22,7 +22,7 @@ function GameItem({ game, isLoadedGame }: { game: Game, isLoadedGame?: boolean }
       <Flex vertical gap="xsmall" className="!text-xs leading-tight text-neutral-400">
         <span>{game?.created_at ? `Created on ${new Date(game.created_at).toLocaleDateString()}` : 'Unknown creation date'}</span>
         <span>{game?.updated_at ? `Last played on ${new Date(game.updated_at).toLocaleDateString()}` : 'Unknown last play date'}</span>
-        <span>{`Sequence kength: ${sequenceLength ?? '?'}`}</span>
+        <span>{`Sequence length: ${sequenceLength ?? '?'}`}</span>
         <span>{game?.questions_sequence?.name ? `Sequence: ${game.questions_sequence.name}` : ''}</span>
       </Flex>
     </Flex>

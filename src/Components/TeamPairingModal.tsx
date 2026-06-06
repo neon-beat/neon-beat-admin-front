@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Divider, Modal } from "antd";
+import { Modal } from "antd";
 import type { Team } from "../Hooks/useNeonBeatGame";
 import TeamItem from "./TeamItem";
 import useNeonBeatGame from "../Hooks/useNeonBeatGame";
@@ -16,13 +16,6 @@ function TeamPairingModal(
   const [currentManualPairingTeam, setCurrentManualPairingTeam] = useState<Team | undefined>();
 
   const { buzzers, teams } = useNeonBeatGame();
-
-  const handleBuzzerClick = (buzzerId: string) => {
-    if (currentManualPairingTeam && onManualPairing) {
-      onManualPairing(currentManualPairingTeam, buzzerId);
-      setCurrentManualPairingTeam(undefined);
-    }
-  };
 
   const checkManualPairingEnabled = () => {
     if (!(typeof onManualPairing === 'function')) return false

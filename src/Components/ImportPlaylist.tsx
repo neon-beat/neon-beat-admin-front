@@ -8,7 +8,7 @@ const { Dragger } = Upload;
 
 type ImportPlaylistPayload = { name: string; questions: unknown[] } | LegacyCreatePlaylistRequest;
 
-function ImportPlaylist({ text, onImport }: { text: string; onImport?: (payload: ImportPlaylistPayload) => Promise<void> }) {
+function ImportPlaylist<T extends ImportPlaylistPayload = ImportPlaylistPayload>({ text, onImport }: { text: string; onImport?: (payload: T) => Promise<void> }) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [importLoading, setImportLoading] = useState<boolean>(false);
 
