@@ -132,7 +132,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   }, [adminToken]);
 
   const searchForBackend = useCallback(async () => {
-    const response = await fetch(`${apiBaseUrl}/healthcheck`);
+    const response = await fetch(`${apiBaseUrl}/healthcheck`, {
+      credentials: 'include',
+    });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Backend not reachable');
       throw new Error(errorMessage);
@@ -141,7 +143,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   }, [apiBaseUrl]);
 
   const initSse = useCallback(() => {
-    const eventSource = new EventSource(`${apiBaseUrl}/sse/admin`);
+    const eventSource = new EventSource(`${apiBaseUrl}/sse/admin`, {
+      withCredentials: true,
+    });
 
     eventSource.onopen = () => {
       console.log('SSE connection established');
@@ -168,7 +172,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   }, [setAdminToken, messageApi]);
 
   const getQuestion = useCallback(async (): Promise<{ question: Question; answers_ids: number[]; hints_ids: number[] }> => {
-    const response = await fetch(`${apiBaseUrl}/public/question`);
+    const response = await fetch(`${apiBaseUrl}/public/question`, {
+      credentials: 'include',
+    });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to fetch question');
       throw new Error(errorMessage);
@@ -179,6 +185,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   const getGames = useCallback(async (): Promise<Game[]> => {
     const response = await fetch(`${apiBaseUrl}/admin/games`, {
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to fetch games');
@@ -190,6 +197,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   const getGame = useCallback(async (gameId: string): Promise<Game> => {
     const response = await fetch(`${apiBaseUrl}/admin/games/${gameId}`, {
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to fetch game');
@@ -204,6 +212,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
@@ -217,6 +226,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   const getQuestionsSequences = useCallback(async (): Promise<QuestionsSequenceListItem[]> => {
     const response = await fetch(`${apiBaseUrl}/admin/questions-sequence`, {
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to fetch questions sequences');
@@ -231,6 +241,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
@@ -245,6 +256,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
@@ -254,7 +266,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   }, [apiBaseUrl, getAdminHeaders]);
 
   const getTeams = useCallback(async (): Promise<Team[]> => {
-    const response = await fetch(`${apiBaseUrl}/public/teams`);
+    const response = await fetch(`${apiBaseUrl}/public/teams`, {
+      credentials: 'include',
+    });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to fetch teams');
       throw new Error(errorMessage);
@@ -267,6 +281,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/teams/${teamId}`, {
       method: 'DELETE',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to delete team');
@@ -278,6 +293,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/games/${gameId}/load`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to load game');
@@ -292,6 +308,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/start`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to start game');
@@ -303,6 +320,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/stop`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to stop game');
@@ -314,6 +332,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/end`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to end game');
@@ -325,6 +344,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/pause`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to pause game');
@@ -336,6 +356,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/reveal`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to reveal question');
@@ -349,6 +370,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
@@ -364,6 +386,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
@@ -377,6 +400,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/resume`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to resume game');
@@ -388,6 +412,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/game/next`, {
       method: 'POST',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to skip to next question');
@@ -396,7 +421,9 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   }, [apiBaseUrl, getAdminHeaders]);
 
   const getCurrentPhase = useCallback(async (): Promise<PhasePayload> => {
-    const response = await fetch(`${apiBaseUrl}/public/phase`);
+    const response = await fetch(`${apiBaseUrl}/public/phase`, {
+      credentials: 'include',
+    });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to get current phase');
       throw new Error(errorMessage);
@@ -410,6 +437,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify({ first_team_id: teamId }),
     });
     if (!response.ok) {
@@ -424,6 +452,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify({ name: payload.name, buzzer_id: payload.buzzer_id, score: payload.score }),
     });
     if (!response.ok) {
@@ -438,6 +467,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify({ delta }),
     });
     if (!response.ok) {
@@ -450,6 +480,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
     const response = await fetch(`${apiBaseUrl}/admin/games/${gameId}`, {
       method: 'DELETE',
       headers: getAdminHeaders(),
+      credentials: 'include',
     });
     if (!response.ok) {
       const errorMessage = await getErrorMessage(response, 'Failed to delete game');
@@ -463,6 +494,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
@@ -497,6 +529,7 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
       headers: getAdminHeaders({
         'Content-Type': 'application/json',
       }),
+      credentials: 'include',
       body: JSON.stringify(payload),
     });
     if (!response.ok) {
