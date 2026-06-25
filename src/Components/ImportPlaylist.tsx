@@ -2,13 +2,15 @@ import { useContext, useState } from "react";
 import { Button, Flex, Modal, Upload } from "antd";
 import { FaUpload } from "react-icons/fa6";
 import MessageContext from "../Context/MessageContext";
-import type { LegacyCreatePlaylistRequest } from "../Context/ApiContext";
 
 const { Dragger } = Upload;
 
-type ImportPlaylistPayload = { name: string; questions: unknown[] } | LegacyCreatePlaylistRequest;
+type ImportPlaylistProps<TPayload> = {
+  text: string;
+  onImport?: (payload: TPayload) => Promise<void>;
+};
 
-function ImportPlaylist({ text, onImport }: { text: string; onImport?: (payload: ImportPlaylistPayload) => Promise<void> }) {
+function ImportPlaylist<TPayload>({ text, onImport }: ImportPlaylistProps<TPayload>) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [importLoading, setImportLoading] = useState<boolean>(false);
 
@@ -26,7 +28,7 @@ function ImportPlaylist({ text, onImport }: { text: string; onImport?: (payload:
     setImportLoading(true);
     try {
       const text = await file.text();
-      const sequenceData = JSON.parse(text);
+      const sequenceData = JSON.parse(text) as TPayload;
       await onImport?.(sequenceData);
     } catch (error: unknown) {
       console.log('Import error:', error);
